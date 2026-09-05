@@ -9,42 +9,171 @@
   "description": {{ (seo_description or summary) | dump | safe }},
   "datePublished":"{{ date.toISOString() }}",
   "author":{"@type":"Organization","name":"원벌룬앤파티"},
-  "publisher":{"@type":"Organization","name":"원벌룬앤파티","logo":{"@type":"ImageObject","url":"https://oneballoon.co.kr/assets/logo.png"}}
-  {% if cover_image %},"image":["https://oneballoon.co.kr{{ cover_image }}"]{% endif %}
+  "publisher":{
+    "@type":"Organization",
+    "name":"원벌룬앤파티",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://oneballoon.co.kr/assets/logo.png"
+    }
+  }
+  {% if cover_image %},
+  "image":["https://oneballoon.co.kr{{ cover_image }}"]
+  {% endif %}
 }
 </script>
 {% endblock %}
 
 {% block content %}
+
 <article class="case-detail">
+
   <header class="case-hero">
-    <p class="eyebrow">{{ category }}{% if region %} · {{ region }}{% endif %}</p>
+
+    <p class="eyebrow">
+      {{ category }}
+      {% if region %}
+        · {{ region }}
+      {% endif %}
+    </p>
+
     <h1>{{ title }}</h1>
-    <p class="case-summary">{{ summary }}</p>
+
+    {% if summary %}
+      <p class="case-summary">{{ summary }}</p>
+    {% endif %}
+
     <p class="case-date">{{ date | dateKo }}</p>
-    {% if cover_image %}<img class="case-cover" src="{{ cover_image }}" alt="{{ cover_alt or title }}">{% endif %}
+
+    {% if cover_image %}
+      <figure class="case-photo-block case-cover-block">
+        <img
+          class="case-cover"
+          src="{{ cover_image }}"
+          alt="{{ cover_alt or title }}"
+        >
+
+        {% if cover_alt %}
+          <figcaption>{{ cover_alt }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
+
   </header>
+
 
   <div class="case-body prose">
     {{ content | safe }}
   </div>
 
+
   {% if gallery %}
   <section class="case-gallery">
+
     <h2>현장 사진</h2>
-    <div class="gallery">
+
+    <div class="gallery-detail">
+
       {% for item in gallery %}
-        <img src="{{ item.image }}" alt="{{ item.alt or title }}">
+
+        <figure class="case-photo-block">
+
+          <img
+            src="{{ item.image }}"
+            alt="{{ item.alt or title }}"
+          >
+
+          {% if item.alt %}
+            <figcaption>{{ item.alt }}</figcaption>
+          {% endif %}
+
+        </figure>
+
       {% endfor %}
+
     </div>
+
   </section>
   {% endif %}
 
+
   <div class="case-cta">
+
     <h2>행사 상담</h2>
-    <p>날짜 · 장소 · 예산 · 원하는 분위기를 알려주시면 상담을 도와드립니다.</p>
-    <a class="btn primary" href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a>
-    <a class="btn" href="{{ site.blog }}" target="_blank" rel="noopener">네이버 블로그</a>
+
+    <p>
+      날짜 · 장소 · 예산 · 원하는 분위기를 알려주시면
+      상담을 도와드립니다.
+    </p>
+
+    <a class="btn primary" href="{{ site.phoneHref }}">
+      {{ site.phoneDisplay }}
+    </a>
+
+    <a
+      class="btn"
+      href="{{ site.blog }}"
+      target="_blank"
+      rel="noopener"
+    >
+      네이버 블로그
+    </a>
+
   </div>
+
 </article>
+
+
+<style>
+
+.case-photo-block {
+  margin: 0 0 36px;
+}
+
+.case-photo-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+.case-photo-block figcaption {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.gallery-detail {
+  margin-top: 24px;
+}
+
+.case-gallery {
+  margin-top: 56px;
+}
+
+.case-gallery h2 {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+
+  .case-photo-block {
+    margin-bottom: 28px;
+  }
+
+  .case-photo-block figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .case-gallery {
+    margin-top: 44px;
+  }
+
+}
+
+</style>
+
 {% endblock %}
