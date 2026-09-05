@@ -25,9 +25,18 @@ collections:
     format: frontmatter
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{title}} · {{region}} · {{category}}"
+
     fields:
-      - { label: 제목, name: title, widget: string, hint: "예: 부천 학교 졸업식 강당 풍선장식" }
-      - { label: 날짜, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - label: 제목
+        name: title
+        widget: string
+        hint: "예: 서울 초등학교 졸업식 대형 졸업장 포토존 풍선장식"
+
+      - label: 날짜
+        name: date
+        widget: datetime
+        date_format: "YYYY-MM-DD"
+        time_format: false
 
       - label: 행사 종류
         name: category
@@ -39,18 +48,48 @@ collections:
           - 팝업스토어 · 브랜드 행사
           - 기타 행사
 
-      - { label: 지역, name: region, widget: string, required: false, hint: "예: 부천 / 인천 / 서울 / 경기" }
-      - { label: 짧은 소개, name: summary, widget: text, hint: "목록 화면에 보이는 1~2문장 설명" }
-      - { label: 대표사진, name: cover_image, widget: image }
-      - { label: 대표사진 설명, name: cover_alt, widget: string, hint: "사진에 실제 보이는 내용을 자연스럽게 설명하세요." }
+      - label: 지역
+        name: region
+        widget: string
+        required: false
+        hint: "예: 서울 / 부천 / 인천 / 경기"
 
-      - label: 추가사진
+      - label: 짧은 소개
+        name: summary
+        widget: text
+        hint: "시공사례 목록과 상세페이지 위쪽에 보이는 1~2문장 설명"
+
+      - label: 대표사진
+        name: cover_image
+        widget: image
+
+      - label: 대표사진 설명
+        name: cover_alt
+        widget: text
+        hint: "대표사진 바로 아래에 보일 설명을 적어주세요."
+
+      - label: 본문 소개
+        name: body
+        widget: markdown
+        hint: "대표사진 다음에 들어갈 현장 전체 소개를 적어주세요."
+
+      - label: 현장 사진과 설명
         name: gallery
         widget: list
         required: false
+        summary: "현장사진 {{fields.image}}"
         fields:
-          - { label: 사진, name: image, widget: image }
-          - { label: 사진 설명, name: alt, widget: string }
+          - label: 사진
+            name: image
+            widget: image
 
-      - { label: 본문, name: body, widget: markdown }
-      - { label: 검색 설명, name: seo_description, widget: text, required: false, hint: "검색결과에 표시될 수 있는 1~2문장 설명" }
+          - label: 사진 아래 글
+            name: alt
+            widget: text
+            hint: "이 사진 바로 아래에 보일 설명을 적어주세요."
+
+      - label: 검색 설명
+        name: seo_description
+        widget: text
+        required: false
+        hint: "구글·네이버 검색결과에 표시될 수 있는 1~2문장 설명"
