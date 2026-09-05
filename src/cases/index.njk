@@ -12,26 +12,146 @@ tags: []
 </section>
 
 <section class="section">
+
 {% if collections.cases.length %}
+
+  <div class="case-filter" aria-label="시공사례 행사 종류">
+    <button type="button" class="filter-btn active" data-filter="all">전체</button>
+    <button type="button" class="filter-btn" data-filter="hall">강당장식</button>
+    <button type="button" class="filter-btn" data-filter="graduation">졸업식 · 입학식 포토존</button>
+    <button type="button" class="filter-btn" data-filter="business">기업 · 관공서 행사</button>
+    <button type="button" class="filter-btn" data-filter="popup">팝업스토어 · 브랜드 행사</button>
+    <button type="button" class="filter-btn" data-filter="etc">기타 행사</button>
+  </div>
+
   <div class="case-grid">
     {% for post in collections.cases %}
-      <article class="case-card">
+
+      {% set filterCategory = "etc" %}
+
+      {% if post.data.category == "학교 졸업식"
+        or post.data.category == "학교 입학식"
+        or post.data.category == "유치원 어린이집" %}
+        {% set filterCategory = "graduation" %}
+
+      {% elif post.data.category == "음악회·발표회" %}
+        {% set filterCategory = "hall" %}
+
+      {% elif post.data.category == "기업행사"
+        or post.data.category == "관공서 행사" %}
+        {% set filterCategory = "business" %}
+
+      {% elif post.data.category == "팝업스토어" %}
+        {% set filterCategory = "popup" %}
+
+      {% elif post.data.category == "기타 행사" %}
+        {% set filterCategory = "etc" %}
+      {% endif %}
+
+      <article class="case-card" data-category="{{ filterCategory }}">
         <a href="{{ post.url }}">
-          {% if post.data.cover_image %}<img src="{{ post.data.cover_image }}" alt="{{ post.data.cover_alt or post.data.title }}">{% endif %}
+          {% if post.data.cover_image %}
+            <img src="{{ post.data.cover_image }}" alt="{{ post.data.cover_alt or post.data.title }}">
+          {% endif %}
+
           <div class="case-card-body">
-            <span>{{ post.data.category }}{% if post.data.region %} · {{ post.data.region }}{% endif %}</span>
+            <span>
+              {{ post.data.category }}
+              {% if post.data.region %}
+                · {{ post.data.region }}
+              {% endif %}
+            </span>
+
             <h2>{{ post.data.title }}</h2>
             <p>{{ post.data.summary }}</p>
           </div>
         </a>
       </article>
+
     {% endfor %}
   </div>
+
 {% else %}
+
   <div class="empty-state">
     <strong>첫 시공사례를 등록해 주세요.</strong>
     <p>관리자에서 등록하면 이 페이지에 자동으로 추가됩니다.</p>
   </div>
+
 {% endif %}
 </section>
+
+<style>
+.case-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.filter-btn {
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  color: #222;
+  padding: 11px 17px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: #222;
+}
+
+.filter-btn.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+.case-card.is-hidden {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .case-filter {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .filter-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".case-card");
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const filter = button.dataset.filter;
+
+      buttons.forEach(function (btn) {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      cards.forEach(function (card) {
+        if (filter === "all" || card.dataset.category === filter) {
+          card.classList.remove("is-hidden");
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+    });
+  });
+});
+</script>
+
 {% endblock %}
