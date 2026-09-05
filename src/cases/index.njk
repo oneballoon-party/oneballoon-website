@@ -5,6 +5,7 @@ seo_description: 원벌룬앤파티의 학교·유치원·기업·관공서 행�
 tags: []
 ---
 {% block content %}
+
 <section class="section page-head">
   <p class="eyebrow">PORTFOLIO</p>
   <h1>시공사례</h1>
@@ -25,50 +26,75 @@ tags: []
   </div>
 
   <div class="case-grid">
+
     {% for post in collections.cases %}
 
-      {% set filterCategory = "etc" %}
+      {% if post.url != "/cases/" %}
 
-      {% if post.data.category == "학교 졸업식"
-        or post.data.category == "학교 입학식"
-        or post.data.category == "유치원 어린이집" %}
-        {% set filterCategory = "graduation" %}
-
-      {% elif post.data.category == "음악회·발표회" %}
-        {% set filterCategory = "hall" %}
-
-      {% elif post.data.category == "기업행사"
-        or post.data.category == "관공서 행사" %}
-        {% set filterCategory = "business" %}
-
-      {% elif post.data.category == "팝업스토어" %}
-        {% set filterCategory = "popup" %}
-
-      {% elif post.data.category == "기타 행사" %}
         {% set filterCategory = "etc" %}
+
+        {% if post.data.category == "강당장식"
+          or post.data.category == "음악회·발표회" %}
+
+          {% set filterCategory = "hall" %}
+
+        {% elif post.data.category == "졸업식 · 입학식 포토존"
+          or post.data.category == "학교 졸업식"
+          or post.data.category == "학교 입학식"
+          or post.data.category == "유치원 어린이집" %}
+
+          {% set filterCategory = "graduation" %}
+
+        {% elif post.data.category == "기업 · 관공서 행사"
+          or post.data.category == "기업행사"
+          or post.data.category == "관공서 행사" %}
+
+          {% set filterCategory = "business" %}
+
+        {% elif post.data.category == "팝업스토어 · 브랜드 행사"
+          or post.data.category == "팝업스토어" %}
+
+          {% set filterCategory = "popup" %}
+
+        {% else %}
+
+          {% set filterCategory = "etc" %}
+
+        {% endif %}
+
+        <article class="case-card" data-category="{{ filterCategory }}">
+          <a href="{{ post.url }}">
+
+            {% if post.data.cover_image %}
+              <img
+                src="{{ post.data.cover_image }}"
+                alt="{{ post.data.cover_alt or post.data.title }}"
+              >
+            {% endif %}
+
+            <div class="case-card-body">
+
+              <span>
+                {{ post.data.category }}
+                {% if post.data.region %}
+                  · {{ post.data.region }}
+                {% endif %}
+              </span>
+
+              <h2>{{ post.data.title }}</h2>
+
+              {% if post.data.summary %}
+                <p>{{ post.data.summary }}</p>
+              {% endif %}
+
+            </div>
+          </a>
+        </article>
+
       {% endif %}
 
-      <article class="case-card" data-category="{{ filterCategory }}">
-        <a href="{{ post.url }}">
-          {% if post.data.cover_image %}
-            <img src="{{ post.data.cover_image }}" alt="{{ post.data.cover_alt or post.data.title }}">
-          {% endif %}
-
-          <div class="case-card-body">
-            <span>
-              {{ post.data.category }}
-              {% if post.data.region %}
-                · {{ post.data.region }}
-              {% endif %}
-            </span>
-
-            <h2>{{ post.data.title }}</h2>
-            <p>{{ post.data.summary }}</p>
-          </div>
-        </a>
-      </article>
-
     {% endfor %}
+
   </div>
 
 {% else %}
@@ -79,6 +105,7 @@ tags: []
   </div>
 
 {% endif %}
+
 </section>
 
 <style>
