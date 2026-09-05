@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title:
-seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학식, 유치원·어린이집 행사, 기업·관공서 행사 풍선장식과 포토존을 제작·설치하는 원벌룬앤파티입니다.
+seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 행사, 기업행사, 팝업스토어·브랜드 행사 풍선장식과 포토존을 제작·설치하는 원벌룬앤파티입니다.
 ---
 
 {% block content %}
@@ -13,13 +13,13 @@ seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학�
     <p class="eyebrow">ONE BALLOON & PARTY</p>
 
     <h1>
-      <span class="hero-line">학교 · 유치원 · 기업행사</span><br>
+      <span class="hero-line">학교 · 관공서 · 기업행사</span><br>
       <span class="hero-line">풍선장식 &amp; 포토존</span>
     </h1>
 
     <p class="lead">
-      서울 · 부천 · 인천 · 경기 지역 출장 설치<br>
-      공간과 예산에 맞춰 행사 분위기를 깔끔하게 완성합니다.
+      학교 행사부터 기업 · 관공서 행사, 팝업스토어 · 브랜드 행사까지<br>
+      공간과 예산에 맞춰 풍선장식과 포토존을 제작 · 설치합니다.
     </p>
 
     <div class="cta-row">
@@ -74,27 +74,38 @@ seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학�
   <div class="cards">
 
     <article class="card">
+
       <h3>학교 · 유치원</h3>
+
       <p>
         졸업식, 입학식, 예술제, 발표회,
         학교행사 무대장식과 포토존을 제작합니다.
       </p>
+
     </article>
 
+
     <article class="card">
+
       <h3>포토존 · 무대장식</h3>
+
       <p>
         강당, 로비, 벽면, 무대 등 공간 조건에 맞춰
         사진이 잘 나오는 구성을 제안합니다.
       </p>
+
     </article>
 
+
     <article class="card">
+
       <h3>기업 · 관공서</h3>
+
       <p>
-        기업행사, 팝업, 기념행사, 기관행사에 맞는
-        컬러와 분위기로 제작·설치합니다.
+        기업행사, 팝업스토어, 브랜드 행사, 기관행사에 맞는
+        컬러와 분위기로 제작 · 설치합니다.
       </p>
+
     </article>
 
   </div>
@@ -107,8 +118,11 @@ seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학�
   <div class="section-heading-row">
 
     <div>
+
       <p class="eyebrow">PORTFOLIO</p>
+
       <h2>최근 시공사례</h2>
+
     </div>
 
     <a class="text-link" href="/cases/">
@@ -137,16 +151,25 @@ seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학�
             <div class="case-card-body">
 
               <span>
+
                 {{ post.data.category }}
+
                 {% if post.data.region %}
                   · {{ post.data.region }}
                 {% endif %}
+
               </span>
 
-              <h3>{{ post.data.title }}</h3>
+              <h3>
+                {{ post.data.title }}
+              </h3>
 
               {% if post.data.summary %}
-                <p>{{ post.data.summary }}</p>
+
+                <p>
+                  {{ post.data.summary }}
+                </p>
+
               {% endif %}
 
             </div>
@@ -191,7 +214,8 @@ seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학�
 
     <p>
       학교 졸업식 · 입학식 · 유치원/어린이집 행사 ·
-      음악/예술 발표회 · 기업/관공서 행사 · 포토존
+      음악/예술 발표회 · 기업/관공서 행사 ·
+      팝업스토어 · 브랜드 행사 · 포토존
     </p>
 
   </div>
@@ -233,8 +257,8 @@ seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학�
 
 /* 메인 상단 대표사진 */
 .hero-case-list {
-  width: 78%;
-  max-width: 560px;
+  width: 88%;
+  max-width: 630px;
   margin: 0 auto;
 }
 
@@ -311,7 +335,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 졸업식·입학�
 @media (max-width: 900px) {
 
   .hero-case-list {
-    width: 85%;
+    width: 92%;
   }
 
   .home-case-grid {
