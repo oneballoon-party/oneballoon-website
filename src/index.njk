@@ -94,31 +94,114 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
   <h2>행사 공간에 맞는 풍선장식</h2>
 
-  <div class="cards">
+  <div class="cards service-cards">
 
-    <article class="card">
-      <h3>학교 · 유치원</h3>
-      <p>
-        졸업식, 입학식, 예술제, 발표회,
-        학교행사 무대장식과 포토존을 제작합니다.
-      </p>
+
+    <article class="card service-card">
+
+      <div class="service-icon service-icon-pink">
+
+        <svg
+          viewBox="0 0 48 48"
+          aria-hidden="true"
+        >
+          <path d="M8 42V20h10v22"></path>
+          <path d="M30 42V14h10v28"></path>
+          <path d="M18 42V10h12v32"></path>
+          <path d="M21 10V6h6v4"></path>
+          <path d="M22 18h4"></path>
+          <path d="M22 25h4"></path>
+          <path d="M22 32h4"></path>
+          <path d="M11 27h4"></path>
+          <path d="M33 22h4"></path>
+          <path d="M33 29h4"></path>
+          <path d="M33 36h4"></path>
+        </svg>
+
+      </div>
+
+      <div class="service-card-copy">
+
+        <h3>학교 · 유치원</h3>
+
+        <p>
+          졸업식, 입학식, 예술제, 발표회,
+          학교행사 무대장식과 포토존을 제작합니다.
+        </p>
+
+      </div>
+
     </article>
 
-    <article class="card">
-      <h3>포토존 · 무대장식</h3>
-      <p>
-        강당, 로비, 벽면, 무대 등 공간 조건에 맞춰
-        사진이 잘 나오는 구성을 제안합니다.
-      </p>
+
+    <article class="card service-card">
+
+      <div class="service-icon service-icon-yellow">
+
+        <svg
+          viewBox="0 0 48 48"
+          aria-hidden="true"
+        >
+          <path d="M8 16h32v24H8z"></path>
+          <circle cx="24" cy="28" r="8"></circle>
+          <path d="M15 16l3-6h8l3 6"></path>
+          <path d="M34 21h2"></path>
+        </svg>
+
+      </div>
+
+      <div class="service-card-copy">
+
+        <h3>포토존 · 무대장식</h3>
+
+        <p>
+          강당, 로비, 벽면, 무대 등 공간 조건에 맞춰
+          사진이 잘 나오는 구성을 제안합니다.
+        </p>
+
+      </div>
+
     </article>
 
-    <article class="card">
-      <h3>기업 · 관공서</h3>
-      <p>
-        기업행사, 팝업스토어, 브랜드 행사, 기관행사에 맞는
-        컬러와 분위기로 제작 · 설치합니다.
-      </p>
+
+    <article class="card service-card">
+
+      <div class="service-icon service-icon-blue">
+
+        <svg
+          viewBox="0 0 48 48"
+          aria-hidden="true"
+        >
+          <path d="M9 42V18h13v24"></path>
+          <path d="M22 42V8h17v34"></path>
+          <path d="M13 23h4"></path>
+          <path d="M13 29h4"></path>
+          <path d="M13 35h4"></path>
+          <path d="M27 14h4"></path>
+          <path d="M34 14h2"></path>
+          <path d="M27 21h4"></path>
+          <path d="M34 21h2"></path>
+          <path d="M27 28h4"></path>
+          <path d="M34 28h2"></path>
+          <path d="M27 35h4"></path>
+          <path d="M34 35h2"></path>
+        </svg>
+
+      </div>
+
+      <div class="service-card-copy">
+
+        <h3>기업 · 관공서</h3>
+
+        <p>
+          기업행사, 팝업스토어, 브랜드 행사, 기관행사에 맞는
+          컬러와 분위기로 제작 · 설치합니다.
+        </p>
+
+      </div>
+
     </article>
+
 
   </div>
 
@@ -321,8 +404,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 /* =========================
-   상단 상담 버튼
-   PC에서는 4개 한 줄
+   상단 버튼
 ========================= */
 
 .hero-contact-buttons {
@@ -340,6 +422,66 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
   padding-left: 17px;
   padding-right: 17px;
   font-size: 15px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-cards {
+  align-items: stretch;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.service-icon {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: #202020;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-icon-pink {
+  background: #f8d8dc;
+}
+
+.service-icon-yellow {
+  background: #faedb8;
+}
+
+.service-icon-blue {
+  background: #d8edf8;
+}
+
+.service-card-copy {
+  min-width: 0;
+}
+
+.service-card-copy h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.service-card-copy p {
+  margin-bottom: 0;
 }
 
 
@@ -401,7 +543,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 /* =========================
-   화면이 조금 좁아질 때
+   화면이 조금 좁을 때
 ========================= */
 
 @media (max-width: 1150px) {
@@ -434,6 +576,21 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
     width: auto;
   }
 
+  .service-card {
+    gap: 16px;
+  }
+
+  .service-icon {
+    flex-basis: 62px;
+    width: 62px;
+    height: 62px;
+  }
+
+  .service-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
   .home-case-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -464,6 +621,21 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
     padding-left: 14px;
     padding-right: 14px;
     font-size: 14px;
+  }
+
+  .service-card {
+    align-items: flex-start;
+  }
+
+  .service-icon {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .service-icon svg {
+    width: 27px;
+    height: 27px;
   }
 
   .home-case-grid {
