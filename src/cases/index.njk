@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: 시공사례
+seo_description: 원벌룬앤파티의 학교·유치원·기업·관공서 행사 풍선장식과 포토존 시공사례를 확인해보세요.
+tags: []
+---
+{% block content %}
+<section class="section page-head">
+  <p class="eyebrow">PORTFOLIO</p>
+  <h1>시공사례</h1>
+  <p>학교 · 유치원 · 기업행사 현장의 풍선장식과 포토존 사례입니다.</p>
+</section>
+
+<section class="section">
+{% if collections.cases.length %}
+  <div class="case-grid">
+    {% for post in collections.cases %}
+      <article class="case-card">
+        <a href="{{ post.url }}">
+          {% if post.data.cover_image %}<img src="{{ post.data.cover_image }}" alt="{{ post.data.cover_alt or post.data.title }}">{% endif %}
+          <div class="case-card-body">
+            <span>{{ post.data.category }}{% if post.data.region %} · {{ post.data.region }}{% endif %}</span>
+            <h2>{{ post.data.title }}</h2>
+            <p>{{ post.data.summary }}</p>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="empty-state">
+    <strong>첫 시공사례를 등록해 주세요.</strong>
+    <p>관리자에서 등록하면 이 페이지에 자동으로 추가됩니다.</p>
+  </div>
+{% endif %}
+</section>
+{% endblock %}

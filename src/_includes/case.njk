@@ -1,0 +1,50 @@
+{% extends "base.njk" %}
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ (seo_description or summary) | dump | safe }},
+  "datePublished":"{{ date.toISOString() }}",
+  "author":{"@type":"Organization","name":"원벌룬앤파티"},
+  "publisher":{"@type":"Organization","name":"원벌룬앤파티","logo":{"@type":"ImageObject","url":"https://oneballoon.co.kr/assets/logo.png"}}
+  {% if cover_image %},"image":["https://oneballoon.co.kr{{ cover_image }}"]{% endif %}
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<article class="case-detail">
+  <header class="case-hero">
+    <p class="eyebrow">{{ category }}{% if region %} · {{ region }}{% endif %}</p>
+    <h1>{{ title }}</h1>
+    <p class="case-summary">{{ summary }}</p>
+    <p class="case-date">{{ date | dateKo }}</p>
+    {% if cover_image %}<img class="case-cover" src="{{ cover_image }}" alt="{{ cover_alt or title }}">{% endif %}
+  </header>
+
+  <div class="case-body prose">
+    {{ content | safe }}
+  </div>
+
+  {% if gallery %}
+  <section class="case-gallery">
+    <h2>현장 사진</h2>
+    <div class="gallery">
+      {% for item in gallery %}
+        <img src="{{ item.image }}" alt="{{ item.alt or title }}">
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="case-cta">
+    <h2>행사 상담</h2>
+    <p>날짜 · 장소 · 예산 · 원하는 분위기를 알려주시면 상담을 도와드립니다.</p>
+    <a class="btn primary" href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a>
+    <a class="btn" href="{{ site.blog }}" target="_blank" rel="noopener">네이버 블로그</a>
+  </div>
+</article>
+{% endblock %}

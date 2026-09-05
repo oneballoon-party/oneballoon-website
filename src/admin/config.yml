@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: oneballoon-party/oneballoon-website
+  branch: main
+  base_url: https://REPLACE-WITH-OAUTH-WORKER.workers.dev
+  auth_endpoint: auth
+
+site_url: https://oneballoon.co.kr
+display_url: https://oneballoon.co.kr
+logo_url: https://oneballoon.co.kr/assets/logo.png
+
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+
+publish_mode: simple
+
+collections:
+  - name: cases
+    label: 시공사례
+    label_singular: 시공사례
+    folder: src/cases
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} · {{region}} · {{category}}"
+    fields:
+      - { label: 제목, name: title, widget: string, hint: "예: 부천 학교 졸업식 강당 풍선장식" }
+      - { label: 날짜, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - label: 행사 종류
+        name: category
+        widget: select
+        options:
+          - 학교 졸업식
+          - 학교 입학식
+          - 유치원·어린이집
+          - 음악회·발표회
+          - 기업행사
+          - 관공서 행사
+          - 팝업스토어
+          - 기타 행사
+      - { label: 지역, name: region, widget: string, required: false, hint: "예: 부천 / 인천 / 서울 / 경기" }
+      - { label: 짧은 소개, name: summary, widget: text, hint: "목록 화면에 보이는 1~2문장 설명" }
+      - { label: 대표사진, name: cover_image, widget: image }
+      - { label: 대표사진 설명, name: cover_alt, widget: string, hint: "사진에 실제 보이는 내용을 자연스럽게 설명하세요." }
+      - label: 추가사진
+        name: gallery
+        widget: list
+        required: false
+        fields:
+          - { label: 사진, name: image, widget: image }
+          - { label: 사진 설명, name: alt, widget: string }
+      - { label: 본문, name: body, widget: markdown }
+      - { label: 검색 설명, name: seo_description, widget: text, required: false, hint: "검색결과에 표시될 수 있는 1~2문장 설명" }
