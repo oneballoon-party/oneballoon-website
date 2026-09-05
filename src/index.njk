@@ -151,25 +151,17 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
             <div class="case-card-body">
 
               <span>
-
                 {{ post.data.category }}
 
                 {% if post.data.region %}
                   · {{ post.data.region }}
                 {% endif %}
-
               </span>
 
-              <h3>
-                {{ post.data.title }}
-              </h3>
+              <h3>{{ post.data.title }}</h3>
 
               {% if post.data.summary %}
-
-                <p>
-                  {{ post.data.summary }}
-                </p>
-
+                <p>{{ post.data.summary }}</p>
               {% endif %}
 
             </div>
@@ -257,8 +249,8 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 /* 메인 상단 대표사진 */
 .hero-case-list {
-  width: 88%;
-  max-width: 630px;
+  width: 100%;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -335,7 +327,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 @media (max-width: 900px) {
 
   .hero-case-list {
-    width: 92%;
+    width: 100%;
   }
 
   .home-case-grid {
