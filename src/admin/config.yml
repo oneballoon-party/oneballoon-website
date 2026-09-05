@@ -2,7 +2,7 @@ backend:
   name: github
   repo: oneballoon-party/oneballoon-website
   branch: main
-  base_url: https://REPLACE-WITH-OAUTH-WORKER.workers.dev
+  base_url: https://young-hall-07c6.bububalloon.workers.dev
   auth_endpoint: auth
 
 site_url: https://oneballoon.co.kr
