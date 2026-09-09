@@ -64,7 +64,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
     <div class="hero-case-list">
 
-      {% for post in collections.cases | reverse %}
+      {% for post in collections.cases %}
 
         {% if post.url != "/cases/" and post.data.cover_image %}
 
@@ -101,10 +101,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
       <div class="service-icon service-icon-pink">
 
-        <svg
-          viewBox="0 0 48 48"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 48 48" aria-hidden="true">
           <path d="M8 42V20h10v22"></path>
           <path d="M30 42V14h10v28"></path>
           <path d="M18 42V10h12v32"></path>
@@ -138,10 +135,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
       <div class="service-icon service-icon-yellow">
 
-        <svg
-          viewBox="0 0 48 48"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 48 48" aria-hidden="true">
           <path d="M8 16h32v24H8z"></path>
           <circle cx="24" cy="28" r="8"></circle>
           <path d="M15 16l3-6h8l3 6"></path>
@@ -168,10 +162,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
       <div class="service-icon service-icon-blue">
 
-        <svg
-          viewBox="0 0 48 48"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 48 48" aria-hidden="true">
           <path d="M9 42V18h13v24"></path>
           <path d="M22 42V8h17v34"></path>
           <path d="M13 23h4"></path>
@@ -226,7 +217,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
   <div class="home-case-grid">
 
-    {% for post in collections.cases | reverse %}
+    {% for post in collections.cases %}
 
       {% if post.url != "/cases/" and post.data.cover_image %}
 
