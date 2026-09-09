@@ -64,7 +64,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
     <div class="hero-case-list">
 
-      {% for post in collections.cases %}
+      {% for post in collections.cases | reverse %}
 
         {% if post.url != "/cases/" and post.data.cover_image %}
 
@@ -226,7 +226,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
   <div class="home-case-grid">
 
-    {% for post in collections.cases %}
+    {% for post in collections.cases | reverse %}
 
       {% if post.url != "/cases/" and post.data.cover_image %}
 
