@@ -90,7 +90,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 <!-- =====================================
-     기존 아이콘 서비스 안내
+     아이콘 서비스 안내
 ===================================== -->
 
 <section class="section service-intro">
@@ -230,7 +230,10 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
   <div class="category-grid">
 
 
-    <!-- 01 학교 · 유치원 행사 -->
+    <!-- =====================================
+         01 학교 · 유치원 행사
+         해당되는 최신 사례의 대표사진 자동 노출
+    ====================================== -->
 
     <a class="category-card" href="/cases/?category=school">
 
@@ -243,6 +246,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
             and (
               post.data.category == "강당장식"
               or post.data.category == "졸업식·입학식 포토존"
+              or post.data.category == "졸업식 · 입학식 포토존"
               or "학교" in post.data.title
               or "유치원" in post.data.title
               or "어린이집" in post.data.title
@@ -285,7 +289,10 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 
-    <!-- 02 기업 · 공공기관 행사 -->
+    <!-- =====================================
+         02 기업 · 공공기관 행사
+         해당되는 최신 사례의 대표사진 자동 노출
+    ====================================== -->
 
     <a class="category-card" href="/cases/?category=business">
 
@@ -298,8 +305,9 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
             and (
               post.data.category == "기업·관공서 행사"
               or post.data.category == "기업 · 관공서 행사"
-              or "기업" in post.data.title
+              or "기업행사" in post.data.title
               or "관공서" in post.data.title
+              or "공공기관" in post.data.title
               or "학술대회" in post.data.title
               or "시상식" in post.data.title
             )
@@ -337,7 +345,10 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 
-    <!-- 03 브랜드 · 팝업스토어 -->
+    <!-- =====================================
+         03 브랜드 · 팝업스토어
+         해당되는 최신 사례의 대표사진 자동 노출
+    ====================================== -->
 
     <a class="category-card" href="/cases/?category=brand">
 
@@ -350,10 +361,11 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
             and (
               post.data.category == "팝업스토어·브랜드 행사"
               or post.data.category == "팝업스토어 · 브랜드 행사"
+              or "팝업스토어" in post.data.title
               or "팝업" in post.data.title
               or "브랜드" in post.data.title
               or "프로모션" in post.data.title
-              or "매장" in post.data.title
+              or "매장 오픈" in post.data.title
             )
           %}
 
@@ -389,7 +401,10 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 
-    <!-- 04 기타 행사 -->
+    <!-- =====================================
+         04 기타 행사
+         학교 / 기업 / 브랜드 사례는 제외
+    ====================================== -->
 
     <a class="category-card" href="/cases/?category=etc">
 
@@ -400,6 +415,25 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
           {% if post.url != "/cases/"
             and post.data.cover_image
             and post.data.category == "기타 행사"
+            and not (
+              "학교" in post.data.title
+              or "유치원" in post.data.title
+              or "어린이집" in post.data.title
+              or "졸업식" in post.data.title
+              or "입학식" in post.data.title
+              or "축제" in post.data.title
+              or "예술제" in post.data.title
+              or "기업행사" in post.data.title
+              or "관공서" in post.data.title
+              or "공공기관" in post.data.title
+              or "학술대회" in post.data.title
+              or "시상식" in post.data.title
+              or "팝업스토어" in post.data.title
+              or "팝업" in post.data.title
+              or "브랜드" in post.data.title
+              or "프로모션" in post.data.title
+              or "매장 오픈" in post.data.title
+            )
           %}
 
             <img
@@ -680,7 +714,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 /* =========================
-   기존 아이콘 서비스 영역
+   아이콘 서비스 영역
 ========================= */
 
 .service-cards {
@@ -741,7 +775,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
 
 /* =========================
-   사진 카테고리
+   행사별 사진 카테고리
 ========================= */
 
 .category-heading {
@@ -782,6 +816,12 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
   inset: 0;
 }
 
+
+/*
+  각 카테고리에 해당하는 사례 이미지를 모두 불러오되
+  가장 앞에 있는 최신 사례의 대표사진 한 장만 표시
+*/
+
 .category-card-media img {
   display: block;
   width: 100%;
@@ -792,6 +832,9 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 .category-card-media img:not(:first-child) {
   display: none;
 }
+
+
+/* 사진 위 어두운 그라데이션 */
 
 .category-card::after {
   content: "";
@@ -806,12 +849,14 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
     );
 }
 
+
 .category-card-copy {
   position: absolute;
   z-index: 2;
   left: 30px;
   right: 30px;
   bottom: 28px;
+  word-break: keep-all;
 }
 
 .category-number {
@@ -909,12 +954,14 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
   margin: 0 0 10px;
   font-size: 22px;
   line-height: 1.35;
+  word-break: keep-all;
 }
 
 .home-case-grid .case-card-body p {
   margin: 0;
   color: #666;
   line-height: 1.7;
+  word-break: keep-all;
 }
 
 
@@ -1006,6 +1053,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
     font-size: 14px;
   }
 
+
   .service-card {
     align-items: flex-start;
   }
@@ -1020,6 +1068,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
     width: 27px;
     height: 27px;
   }
+
 
   .category-grid {
     grid-template-columns: 1fr;
@@ -1045,6 +1094,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
     font-size: 14px;
     word-break: keep-all;
   }
+
 
   .home-case-grid {
     grid-template-columns: 1fr;
