@@ -18,6 +18,7 @@ tags: []
 
   <div class="case-filter" aria-label="시공사례 행사 종류">
     <button type="button" class="filter-btn active" data-filter="all">전체</button>
+    <button type="button" class="filter-btn" data-filter="school">학교 · 유치원 행사</button>
     <button type="button" class="filter-btn" data-filter="hall">강당장식</button>
     <button type="button" class="filter-btn" data-filter="graduation">졸업식 · 입학식 포토존</button>
     <button type="button" class="filter-btn" data-filter="business">기업 · 관공서 행사</button>
@@ -127,24 +128,41 @@ tags: []
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll(".case-card");
+  const filterMap = {
+    school: "school",
+    hall: "hall",
+    graduation: "graduation",
+    business: "business",
+    brand: "popup",
+    popup: "popup",
+    etc: "etc"
+  };
+
+  function applyFilter(filter) {
+    buttons.forEach(function (button) {
+      button.classList.toggle("active", button.dataset.filter === filter);
+    });
+    cards.forEach(function (card) {
+      const tags = (card.dataset.category || "").trim().split(/\s+/);
+      const matches = filter === "all" ||
+        (filter === "school" ? (tags.includes("hall") || tags.includes("graduation")) : tags.includes(filter));
+      card.classList.toggle("is-hidden", !matches);
+    });
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  applyFilter(filterMap[params.get("category")] || "all");
 
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
-      const filter = button.dataset.filter;
-
-      buttons.forEach(function (btn) {
-        btn.classList.remove("active");
-      });
-
-      button.classList.add("active");
-
-      cards.forEach(function (card) {
-        if (filter === "all" || card.dataset.category.split(" ").includes(filter)) {
-          card.classList.remove("is-hidden");
-        } else {
-          card.classList.add("is-hidden");
-        }
-      });
+      applyFilter(button.dataset.filter);
+      const url = new URL(window.location.href);
+      if (button.dataset.filter === "all") {
+        url.searchParams.delete("category");
+      } else {
+        url.searchParams.set("category", button.dataset.filter);
+      }
+      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
     });
   });
 });
