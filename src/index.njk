@@ -243,18 +243,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
           {% if post.url != "/cases/"
             and post.data.cover_image
-            and (
-              post.data.category == "강당장식"
-              or post.data.category == "졸업식·입학식 포토존"
-              or post.data.category == "졸업식 · 입학식 포토존"
-              or "학교" in post.data.title
-              or "유치원" in post.data.title
-              or "어린이집" in post.data.title
-              or "졸업식" in post.data.title
-              or "입학식" in post.data.title
-              or "예술제" in post.data.title
-              or "축제" in post.data.title
-            )
+            and (post.data.category == "강당장식" or post.data.category == "졸업식 · 입학식 포토존" or post.data.category == "졸업식·입학식 포토존")
           %}
 
             <img
@@ -302,15 +291,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
           {% if post.url != "/cases/"
             and post.data.cover_image
-            and (
-              post.data.category == "기업·관공서 행사"
-              or post.data.category == "기업 · 관공서 행사"
-              or "기업행사" in post.data.title
-              or "관공서" in post.data.title
-              or "공공기관" in post.data.title
-              or "학술대회" in post.data.title
-              or "시상식" in post.data.title
-            )
+            and (post.data.category == "기업 · 관공서 행사" or post.data.category == "기업·관공서 행사")
           %}
 
             <img
@@ -358,15 +339,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
           {% if post.url != "/cases/"
             and post.data.cover_image
-            and (
-              post.data.category == "팝업스토어·브랜드 행사"
-              or post.data.category == "팝업스토어 · 브랜드 행사"
-              or "팝업스토어" in post.data.title
-              or "팝업" in post.data.title
-              or "브랜드" in post.data.title
-              or "프로모션" in post.data.title
-              or "매장 오픈" in post.data.title
-            )
+            and (post.data.category == "팝업스토어 · 브랜드 행사" or post.data.category == "팝업스토어·브랜드 행사")
           %}
 
             <img
@@ -415,25 +388,6 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
           {% if post.url != "/cases/"
             and post.data.cover_image
             and post.data.category == "기타 행사"
-            and not (
-              "학교" in post.data.title
-              or "유치원" in post.data.title
-              or "어린이집" in post.data.title
-              or "졸업식" in post.data.title
-              or "입학식" in post.data.title
-              or "축제" in post.data.title
-              or "예술제" in post.data.title
-              or "기업행사" in post.data.title
-              or "관공서" in post.data.title
-              or "공공기관" in post.data.title
-              or "학술대회" in post.data.title
-              or "시상식" in post.data.title
-              or "팝업스토어" in post.data.title
-              or "팝업" in post.data.title
-              or "브랜드" in post.data.title
-              or "프로모션" in post.data.title
-              or "매장 오픈" in post.data.title
-            )
           %}
 
             <img
