@@ -243,7 +243,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
           {% if post.url != "/cases/"
             and post.data.cover_image
-            and (post.data.category == "강당장식" or post.data.category == "졸업식 · 입학식 포토존" or post.data.category == "졸업식·입학식 포토존")
+            and (post.data.category == "강당장식" or post.data.category == "졸업식 · 입학식 포토존" or post.data.category == "졸업식·입학식 포토존" or (post.data.categories and ("강당장식" in post.data.categories or "졸업식 · 입학식 포토존" in post.data.categories)))
           %}
 
             <img
@@ -291,7 +291,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
           {% if post.url != "/cases/"
             and post.data.cover_image
-            and (post.data.category == "기업 · 관공서 행사" or post.data.category == "기업·관공서 행사")
+            and (post.data.category == "기업 · 관공서 행사" or post.data.category == "기업·관공서 행사" or (post.data.categories and "기업 · 관공서 행사" in post.data.categories))
           %}
 
             <img
@@ -339,7 +339,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
           {% if post.url != "/cases/"
             and post.data.cover_image
-            and (post.data.category == "팝업스토어 · 브랜드 행사" or post.data.category == "팝업스토어·브랜드 행사")
+            and (post.data.category == "팝업스토어 · 브랜드 행사" or post.data.category == "팝업스토어·브랜드 행사" or (post.data.categories and "팝업스토어 · 브랜드 행사" in post.data.categories))
           %}
 
             <img
@@ -387,7 +387,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
           {% if post.url != "/cases/"
             and post.data.cover_image
-            and post.data.category == "기타 행사"
+            and (post.data.category == "기타 행사" or (post.data.categories and "기타 행사" in post.data.categories))
           %}
 
             <img
