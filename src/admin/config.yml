@@ -12,6 +12,18 @@ logo_url: https://oneballoon.co.kr/assets/logo.png
 media_folder: src/assets/uploads
 public_folder: /assets/uploads
 
+# Compress newly uploaded JPEG/PNG/WebP images in the browser before GitHub storage.
+# Existing uploaded files are not changed. Keep natural aspect ratios (no crop).
+media_processing:
+  enabled: true
+  format:
+    enabled: true
+    default: webp
+  quality: 82
+  strip_metadata: true
+  width: 2000
+  height: null
+
 publish_mode: simple
 
 collections:
