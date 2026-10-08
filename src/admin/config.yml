@@ -60,6 +60,19 @@ collections:
           - 팝업스토어 · 브랜드 행사
           - 기타 행사
 
+      - label: 추가 행사 종류 (선택 사항)
+        name: categories
+        widget: select
+        multiple: true
+        required: false
+        hint: "기본 행사 종류 외에 함께 표시할 카테고리를 선택하세요. 예: 졸업식 포토존 + 강당장식"
+        options:
+          - 강당장식
+          - 졸업식 · 입학식 포토존
+          - 기업 · 관공서 행사
+          - 팝업스토어 · 브랜드 행사
+          - 기타 행사
+
       - label: 지역
         name: region
         widget: string
