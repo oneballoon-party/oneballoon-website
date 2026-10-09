@@ -64,29 +64,20 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
     <div class="hero-case-list">
 
-      {# The cases collection already has newest-first ordering.
-         Read its first item's cover directly: selectattr("data.cover_image")
-         may treat the dotted name as a literal attribute and return nothing. #}
-      {% if collections.cases and collections.cases.length %}
-
-        {% set latestCase = collections.cases[0] %}
-
-        {% if latestCase.data.cover_image %}
-
-          <a class="hero-case-item" href="{{ latestCase.url }}">
-
+      {# Use the same proven newest-first loop as the working RECENT WORK cards. #}
+      {% for post in collections.cases %}
+        {% if loop.first and post.data.cover_image %}
+          <a class="hero-case-item" href="{{ post.url }}">
             <img
-              src="{{ latestCase.data.cover_image }}"
-              alt="{{ latestCase.data.cover_alt or latestCase.data.title }}"
+              src="{{ post.data.cover_image }}"
+              alt="{{ post.data.cover_alt or post.data.title }}"
               loading="eager"
               fetchpriority="high"
+              decoding="async"
             >
-
           </a>
-
         {% endif %}
-
-      {% endif %}
+      {% endfor %}
 
     </div>
 
@@ -626,6 +617,9 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
   align-items: center;
   justify-content: center;
   overflow: visible;
+  /* Show a locally hosted graduation image even if template data fails. */
+  background: center / contain no-repeat url('/assets/uploads/book-graduation-cover.jpg');
+  border-radius: 20px;
 }
 
 .hero-case-list {
