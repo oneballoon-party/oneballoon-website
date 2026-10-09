@@ -64,22 +64,20 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
     <div class="hero-case-list">
 
-      {% for post in collections.cases %}
+      {% set latestCase = collections.cases | selectattr("data.cover_image") | first %}
 
-        {% if post.url != "/cases/" and post.data.cover_image %}
+      {% if latestCase %}
 
-          <a class="hero-case-item" href="{{ post.url }}">
+        <a class="hero-case-item" href="{{ latestCase.url }}">
 
-            <img
-              src="{{ post.data.cover_image }}"
-              alt="{{ post.data.cover_alt or post.data.title }}"
-            >
+          <img
+            src="{{ latestCase.data.cover_image }}"
+            alt="{{ latestCase.data.cover_alt or latestCase.data.title }}"
+          >
 
-          </a>
+        </a>
 
-        {% endif %}
-
-      {% endfor %}
+      {% endif %}
 
     </div>
 
