@@ -4,8 +4,16 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for item in collections.all %}
-{% if item.url and not item.url.startsWith('/admin/') %}
+  {# Only indexable public landing pages belong in the sitemap.
+     Avoid including the verification file, admin, or other utility files. #}
+  <url>
+    <loc>{{ site.url }}/</loc>
+  </url>
+  <url>
+    <loc>{{ site.url }}/cases/</loc>
+  </url>
+{% for item in collections.cases %}
+{% if item.url and item.data.cover_image %}
   <url>
     <loc>{{ site.url }}{{ item.url }}</loc>
   </url>
