@@ -115,6 +115,13 @@ collections:
             widget: text
             hint: "이 사진 바로 아래에 보일 설명을 적어주세요."
 
+          - label: 세로 사진 작게 보기
+            name: portrait
+            widget: boolean
+            required: false
+            default: false
+            hint: "세로 사진인 경우에만 선택하세요. 기아 사례처럼 최대 너비 580px로 보여줍니다."
+
       - label: 검색 설명
         name: seo_description
         widget: text

@@ -87,7 +87,7 @@
 
         {% for item in gallery %}
 
-          <figure class="case-photo-block">
+          <figure class="case-photo-block{% if item.portrait %} case-photo-portrait{% endif %}">
 
             <img
               src="{{ item.image }}"
@@ -181,6 +181,11 @@
   border-radius: 18px;
 }
 
+
+/* 기아 사례와 같은 너비(580px)로 세로 사진만 줄입니다. 가로 사진과 대표사진은 변경하지 않습니다. */
+.case-gallery .case-photo-block.case-photo-portrait {
+  max-width: 580px;
+}
 
 /* 사진 아래 설명 */
 .photo-description {
