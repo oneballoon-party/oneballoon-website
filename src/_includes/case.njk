@@ -21,7 +21,7 @@
     }
   }
   {% if cover_image %},
-  "image":["https://oneballoon.co.kr{{ cover_image }}"]
+  "image":["{% if "://" in cover_image %}{{ cover_image }}{% else %}https://oneballoon.co.kr{{ cover_image }}{% endif %}"]
   {% endif %}
 }
 </script>
