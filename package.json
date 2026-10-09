@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "eleventy",
+    "build": "node scripts/cache-book-graduation-images.mjs && eleventy",
     "start": "eleventy --serve"
   },
   "devDependencies": {
