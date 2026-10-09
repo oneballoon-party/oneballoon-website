@@ -24,7 +24,7 @@ media_processing:
   width: 2000
   height: null
 
-publish_mode: simple
+publish_mode: editorial_workflow
 
 collections:
   - name: cases
