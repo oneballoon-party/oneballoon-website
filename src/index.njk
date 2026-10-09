@@ -64,18 +64,27 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
 
     <div class="hero-case-list">
 
-      {% set latestCase = collections.cases | selectattr("data.cover_image") | first %}
+      {# The cases collection already has newest-first ordering.
+         Read its first item's cover directly: selectattr("data.cover_image")
+         may treat the dotted name as a literal attribute and return nothing. #}
+      {% if collections.cases and collections.cases.length %}
 
-      {% if latestCase %}
+        {% set latestCase = collections.cases[0] %}
 
-        <a class="hero-case-item" href="{{ latestCase.url }}">
+        {% if latestCase.data.cover_image %}
 
-          <img
-            src="{{ latestCase.data.cover_image }}"
-            alt="{{ latestCase.data.cover_alt or latestCase.data.title }}"
-          >
+          <a class="hero-case-item" href="{{ latestCase.url }}">
 
-        </a>
+            <img
+              src="{{ latestCase.data.cover_image }}"
+              alt="{{ latestCase.data.cover_alt or latestCase.data.title }}"
+              loading="eager"
+              fetchpriority="high"
+            >
+
+          </a>
+
+        {% endif %}
 
       {% endif %}
 
