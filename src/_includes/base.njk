@@ -55,5 +55,19 @@
   <img src="/assets/logo.png" alt="" aria-hidden="true">
   <p>© 2026 ONE BALLOON & PARTY. All rights reserved.</p>
 </footer>
+<script>
+  // Keep landscape KIA portfolio photos at their original width;
+  // only portrait photos use the narrower 580px presentation.
+  document.querySelectorAll('.case-detail .prose img[src*="/assets/uploads/"]').forEach((img) => {
+    if (!/\/(1000039973|1000039976|1000039987|1000039991|1000039994|1000040619|1000040861|1000041324)\.webp$/.test(img.getAttribute('src') || '')) return;
+    const resize = () => {
+      img.style.maxWidth = img.naturalWidth > img.naturalHeight ? '100%' : '580px';
+      img.style.display = 'block';
+      img.style.margin = '24px auto';
+    };
+    if (img.complete && img.naturalWidth) resize();
+    else img.addEventListener('load', resize, { once: true });
+  });
+</script>
 </body>
 </html>
