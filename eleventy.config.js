@@ -12,8 +12,20 @@ export default function(eleventyConfig) {
     return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")}`;
   });
 
+  // Use exact publishing timestamps when available, so cases created on the
+  // same calendar date still appear newest-first across homepage and listings.
+  // Legacy cases without this field retain their existing front-matter dates.
   eleventyConfig.addCollection("cases", (collectionApi) => {
-    return collectionApi.getFilteredByTag("case").sort((a,b) => b.date - a.date);
+    const publishedTime = (post) => {
+      const timestamp = post.data.published_at
+        ? Date.parse(post.data.published_at)
+        : NaN;
+      return Number.isFinite(timestamp) ? timestamp : post.date.getTime();
+    };
+    return collectionApi.getFilteredByTag("case").sort((a, b) =>
+      publishedTime(b) - publishedTime(a) ||
+      b.inputPath.localeCompare(a.inputPath)
+    );
   });
 
   return {
