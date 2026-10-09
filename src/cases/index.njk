@@ -32,7 +32,7 @@ tags: []
 
       {% if post.url != "/cases/" %}
 
-        <article class="case-card" data-category="{% if post.data.category == '강당장식' or post.data.category == '음악회·발표회' or (post.data.categories and '강당장식' in post.data.categories) %}hall {% endif %}{% if post.data.category == '졸업식 · 입학식 포토존' or post.data.category == '졸업식·입학식 포토존' or post.data.category == '학교 졸업식' or post.data.category == '학교 입학식' or post.data.category == '유치원 어린이집' or (post.data.categories and '졸업식 · 입학식 포토존' in post.data.categories) %}graduation {% endif %}{% if post.data.category == '기업 · 관공서 행사' or post.data.category == '기업행사' or post.data.category == '관공서 행사' or (post.data.categories and '기업 · 관공서 행사' in post.data.categories) %}business {% endif %}{% if post.data.category == '팝업스토어 · 브랜드 행사' or post.data.category == '팝업스토어' or (post.data.categories and '팝업스토어 · 브랜드 행사' in post.data.categories) %}popup {% endif %}{% if post.data.category == '기타 행사' or (post.data.categories and '기타 행사' in post.data.categories) %}etc {% endif %}">
+        <article class="case-card" data-category="{% if post.data.category == '학교 · 유치원 행사' or (post.data.categories and '학교 · 유치원 행사' in post.data.categories) %}school {% endif %}{% if post.data.category == '강당장식' or post.data.category == '음악회·발표회' or (post.data.categories and '강당장식' in post.data.categories) %}hall {% endif %}{% if post.data.category == '졸업식 · 입학식 포토존' or post.data.category == '졸업식·입학식 포토존' or post.data.category == '학교 졸업식' or post.data.category == '학교 입학식' or post.data.category == '유치원 어린이집' or (post.data.categories and '졸업식 · 입학식 포토존' in post.data.categories) %}graduation {% endif %}{% if post.data.category == '기업 · 관공서 행사' or post.data.category == '기업행사' or post.data.category == '관공서 행사' or (post.data.categories and '기업 · 관공서 행사' in post.data.categories) %}business {% endif %}{% if post.data.category == '팝업스토어 · 브랜드 행사' or post.data.category == '팝업스토어' or (post.data.categories and '팝업스토어 · 브랜드 행사' in post.data.categories) %}popup {% endif %}{% if post.data.category == '기타 행사' or (post.data.categories and '기타 행사' in post.data.categories) %}etc {% endif %}">
           <a href="{{ post.url }}">
 
             {% if post.data.cover_image %}
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cards.forEach(function (card) {
       const tags = (card.dataset.category || "").trim().split(/\s+/);
       const matches = filter === "all" ||
-        (filter === "school" ? (tags.includes("hall") || tags.includes("graduation")) : tags.includes(filter));
+        (filter === "school" ? (tags.includes("school") || tags.includes("hall") || tags.includes("graduation")) : tags.includes(filter));
       card.classList.toggle("is-hidden", !matches);
     });
   }
