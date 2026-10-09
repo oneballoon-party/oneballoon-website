@@ -22,7 +22,7 @@ export default function(eleventyConfig) {
         : NaN;
       return Number.isFinite(timestamp) ? timestamp : post.date.getTime();
     };
-    return collectionApi.getFilteredByTag("case").sort((a, b) =>
+    return collectionApi.getFilteredByTag("case").filter(post => post.data.cover_image).sort((a, b) =>
       publishedTime(b) - publishedTime(a) ||
       b.inputPath.localeCompare(a.inputPath)
     );
