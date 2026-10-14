@@ -130,6 +130,13 @@ collections:
             default: false
             hint: "세로 사진인 경우에만 선택하세요. 기아 사례처럼 최대 너비 580px로 보여줍니다."
 
+      - label: 쥬마뻴 현장 스태프 참여 안내 (마지막 사진 아래)
+        name: jemappelle_staff_credit
+        widget: boolean
+        required: false
+        default: false
+        hint: "쥬마뻴이 진행한 행사에 스태프로 참여한 경우 선택하면 마지막 현장 사진 아래에 참여 안내가 표시됩니다."
+
       - label: 검색 설명
         name: seo_description
         widget: text
