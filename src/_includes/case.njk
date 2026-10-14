@@ -110,6 +110,17 @@
     </section>
   {% endif %}
 
+  {% if jemappelle_staff_credit %}
+    <section class="case-participation-credit prose" aria-label="현장 참여 안내">
+      <h2>현장 참여 안내</h2>
+      <p>이번 행사는 <strong>쥬마뻴(Je m'appelle)이 진행한 행사</strong>이며, <strong>원벌룬앤파티는 현장 스태프로 참여</strong>했습니다.</p>
+      <ul>
+        <li>행사 진행 및 연출: 쥬마뻴</li>
+        <li>현장 스태프 참여: 원벌룬앤파티</li>
+      </ul>
+    </section>
+  {% endif %}
+
 
   <div class="case-cta">
 
@@ -229,6 +240,24 @@
   display: block;
 }
 
+
+/* 참여 안내는 현장 갤러리의 마지막 사진 아래에 표시합니다. */
+.case-participation-credit {
+  max-width: 820px;
+  margin: 12px auto 64px;
+  padding: 0 16px;
+  line-height: 1.85;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.case-participation-credit h2 {
+  font-size: 24px;
+}
+
+.case-participation-credit ul {
+  padding-left: 24px;
+}
 
 /* 상담 영역 */
 .case-cta {
