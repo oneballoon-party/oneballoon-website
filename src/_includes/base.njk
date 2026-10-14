@@ -11,7 +11,7 @@
   <meta property="og:description" content="{{ seo_description or summary or site.description }}">
   <meta property="og:type" content="{% if page.url.startsWith('/cases/') and page.url != '/cases/' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  {% if cover_image %}<meta property="og:image" content="{{ site.url }}{{ cover_image }}">{% endif %}
+  {% if cover_image %}<meta property="og:image" content="{% if "://" in cover_image %}{{ cover_image }}{% else %}{{ site.url }}{{ cover_image }}{% endif %}">{% endif %}
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
