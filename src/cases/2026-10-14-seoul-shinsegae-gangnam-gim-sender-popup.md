@@ -3,6 +3,7 @@ title: "서울 신세계백화점 강남점 김샌더 팝업스토어｜브랜�
 date: 2026-10-14
 published_at: "2026-10-14T20:10:00+09:00"
 category: "팝업스토어 · 브랜드 행사"
+jemappelle_staff_credit: true
 region: "서울"
 summary: "서울 신세계백화점 강남점 김샌더(GIM SENDER) 팝업스토어. 핑크·블루 패키지와 한국적인 산수화 디자인, 전통 소품이 어우러진 브랜드 디스플레이 현장입니다."
 cover_image: "https://blogfiles.pstatic.net/MjAyNjEwMTRfMjY5/MDAxNzkxOTcyNTE0NjI5.XXHNBW8kRmWgs8DxTU5L0DKXYDMT_xhCYwDbr5APSJUg.p3DdIu5g5-29tXRVMAGCG8BL-ieeZINdD7CMeMZrqGsg.JPEG/900_260903_%EC%84%9C%EC%9A%B8_%EC%8B%A0%EC%84%B8%EA%B3%84%EB%B0%B1%ED%99%94%EC%A0%90%EA%B0%95%EB%82%A8%EC%A0%90_%EA%B9%80%EC%83%8C%EB%8D%94%ED%8C%9D%EC%97%85%EC%8A%A4%ED%86%A0%EC%96%B4_10.jpg?type=w1"
@@ -54,9 +55,3 @@ seo_description: "서울 신세계백화점 강남점 김샌더 팝업스토어 
 
 원벌룬앤파티는 서울·경기·부천·인천 지역에서 브랜드 행사, 기업행사 풍선장식 및 포토존 제작·설치 상담을 진행합니다.
 
-## 현장 참여 안내
-
-이번 행사는 쥬마뻴(Je m'appelle)이 진행한 행사이며, 원벌룬앤파티는 현장 스태프로 참여했습니다.
-
-- 행사 진행 및 연출: 쥬마뻴
-- 현장 스태프 참여: 원벌룬앤파티
