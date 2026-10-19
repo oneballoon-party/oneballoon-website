@@ -74,6 +74,7 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
               loading="eager"
               fetchpriority="high"
               decoding="async"
+              onerror="this.hidden=true"
             >
           </a>
         {% endif %}
@@ -617,8 +618,8 @@ seo_description: 서울·부천·인천·경기 지역 학교 행사, 관공서 
   align-items: center;
   justify-content: center;
   overflow: visible;
-  /* Show a locally hosted graduation image even if template data fails. */
-  background: center / contain no-repeat url('/assets/uploads/book-graduation-cover.jpg');
+  /* The newest case photo is rendered by the img above; never layer an older photo behind it. */
+  background: none;
   border-radius: 20px;
 }
 
