@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/cache-book-graduation-images.mjs && node scripts/cache-gim-sender-images.mjs && node scripts/cache-elementary-graduation-images.mjs && eleventy",
+    "build": "node scripts/cache-book-graduation-images.mjs && node scripts/cache-gim-sender-images.mjs && node scripts/cache-elementary-graduation-images.mjs && node scripts/cache-school-pastel-square-photozone-images.mjs && eleventy",
     "start": "eleventy --serve"
   },
   "devDependencies": {
