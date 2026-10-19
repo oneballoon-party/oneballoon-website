@@ -4,12 +4,12 @@ date: 2026-10-19
 category: 학교 · 유치원 행사
 categories:
   - 졸업식 · 입학식 포토존
-summary: 파스텔 컬러의 데이지 꽃풍선과 튤립·트로피 캐릭터 장식을 더한 약 2m 높이의 학교 사각 포토존 디자인입니다. 졸업식 축하 문구를 입학식 문구로 변경한 활용 예시와 가족 기념사진 연출도 함께 소개합니다.
+summary: 파스텔 컬러의 데이지 꽃풍선과 튤립·트로피 캐릭터 장식을 더한 가로 2,500mm × 높이 2,300mm 크기의 학교 사각 포토존 디자인입니다. 졸업식 축하 문구를 입학식 문구로 변경한 활용 예시와 가족 기념사진 연출도 함께 소개합니다.
 cover_image: "https://blogfiles.pstatic.net/MjAyNjEwMTlfMzkg/MDAxNzkyNDEyOTk3NTQ2.dcDVeB3G0dMxTuYHbW8iSuNmzHBc6HG9Zcy6uYn9Prkg.gTMx_ypl1TesXixaxFtUSQMwxk1Qs1NRn_7Dj75QsyMg.PNG/900_260907_%ED%95%99%EA%B5%90%EC%A1%B8%EC%97%85%EC%8B%9D_%ED%8C%8C%EC%8A%A4%ED%85%94%EA%BD%83%ED%92%8D%EC%84%A0_%EC%82%AC%EA%B0%81%ED%8F%AC%ED%86%A0%EC%A1%B4%EC%A0%84%EC%B2%B4_12.png?type=w1"
 cover_alt: "학교 로비에 파스텔 꽃풍선 사각 포토존을 배치한 전체 배경 합성 예시. 옐로우·민트·핑크와 화이트 데이지 장식"
 gallery:
   - image: "https://blogfiles.pstatic.net/MjAyNjEwMTlfMTk2/MDAxNzkyNDEyOTk3NDIw.xMQftNPEyJzUvcbFL5c1ugjOejltAHmYd40eBlhnC7Ag.gxlRlL2VGv174xtAkcKZqdQHquh1N1K9UwJ96c_Pd0Ag.PNG/260907_%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90%EC%A1%B8%EC%97%85%EC%8B%9D_%ED%92%8D%EC%84%A0%EC%82%AC%EA%B0%81%ED%8F%AC%ED%86%A0%EC%A1%B4_%EC%84%B8%EB%A1%9C%EC%A0%84%EA%B2%BD_12.png?type=w1"
-    alt: "약 2m 높이의 초등학교 졸업식 사각 풍선 포토존을 학교 로비에 배치해 본 세로 전경 합성 예시"
+    alt: "가로 2,500mm × 높이 2,300mm 크기의 초등학교 졸업식 사각 풍선 포토존을 학교 로비에 배치해 본 세로 전경 합성 예시"
     portrait: true
   - image: "https://blogfiles.pstatic.net/MjAyNjEwMTlfMjMy/MDAxNzkyNDEyOTk3NzUx.yZUAwQd6JYuqxqFRvkiK2SGfeAqrl0if3xe_c0tAkrAg.Zhl81sMVo1OdIA_qEX_KUdk2SLgKWPvYM8XURwxu6Xog.PNG/900_260907_%ED%95%99%EA%B5%90%EC%A1%B8%EC%97%85%EC%8B%9D_%ED%92%8D%EC%84%A0%EC%82%AC%EA%B0%81%ED%8F%AC%ED%86%A0%EC%A1%B4_%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%9E%A5%EC%8B%9D_12.png?type=w1"
     alt: "화이트 데이지 꽃풍선과 트로피, 하트, 크레용 소품으로 꾸민 사각 포토존 오른쪽 장식"
@@ -30,7 +30,9 @@ seo_description: 초등학교 졸업식·입학식 사각 포토존 디자인. �
 
 ## 꽃풍선과 귀여운 장식이 어우러진 사각 포토존
 
-약 2m 높이의 사각 프레임은 중앙이 열려 있어 학생들이 안쪽에 서서 기념사진을 찍기 좋은 형태입니다. 오른쪽에는 데이지 꽃풍선과 트로피·하트·크레용 장식을, 왼쪽에는 웃는 튤립 캐릭터와 꽃풍선을 배치해 양쪽에서 볼 때도 포인트가 살아나도록 구성했습니다.
+**포토존 크기: 가로 2,500mm × 높이 2,300mm**
+
+사각 프레임은 중앙이 열려 있어 학생들이 안쪽에 서서 기념사진을 찍기 좋은 형태입니다. 오른쪽에는 데이지 꽃풍선과 트로피·하트·크레용 장식을, 왼쪽에는 웃는 튤립 캐릭터와 꽃풍선을 배치해 양쪽에서 볼 때도 포인트가 살아나도록 구성했습니다.
 
 ## 졸업식부터 입학식까지 문구 변경
 
