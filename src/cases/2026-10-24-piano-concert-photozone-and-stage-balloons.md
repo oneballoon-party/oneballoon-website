@@ -4,7 +4,7 @@ date: 2026-10-24
 published_at: "2026-10-24T01:19:00+09:00"
 category: 기타 행사
 summary: "음악학원 피아노 발표회를 위한 블랙 피아노 백보드 포토존과 그랜드피아노 무대 풍선장식입니다. 골드 별풍선, 블랙·화이트·샴페인 골드 헬륨풍선으로 연주회 공간을 차분하고 세련되게 꾸몄습니다."
-cover_image: "https://blogfiles.pstatic.net/MjAyNjEwMjFfMjUx/MDAxNzkyNTQ0MzgyODIy.1Xl5GISqMomzm7C-36XZAc-S3ajBWkfM9q9TPUddXTEg.khzUMFN5Q8B-voAM__h1tZ3tIndqBgE0LCigD0thktIg.JPEG/900_20261021_%ED%94%BC%EC%95%84%EB%85%B8%EB%B0%9C%ED%91%9C%ED%9A%8C_%EA%B3%A8%EB%93%9C%EB%B3%84%ED%92%8D%EC%84%A0%EC%9E%A5%EC%8B%9D_04.jpg?type=w1"
+cover_image: "https://blogfiles.pstatic.net/MjAyNjEwMjFfMTg1/MDAxNzkyNTQ0MzgyMTc2.pUfgModfDOVSO1i-mPlMkhaSph04xK9x4JrQmXbKwcQg.p9K0ElCs_iM25WfvSqeWtddhQhFeqDnf4K6w6VdTB70g.JPEG/900_20261021_%ED%94%BC%EC%95%84%EB%85%B8%EB%B0%9C%ED%91%9C%ED%9A%8C_%ED%8F%AC%ED%86%A0%EC%A1%B4%EC%A0%84%EC%B2%B4_03.jpg?type=w1"
 cover_alt: "블랙 피아노 모양 백보드에 Piano concert 문구와 건반 디자인을 넣고, 골드 별풍선과 블랙·화이트·골드 풍선을 양옆에 설치한 피아노 발표회 포토존 전체"
 gallery:
   - image: "https://blogfiles.pstatic.net/MjAyNjEwMjFfMzkg/MDAxNzkyNTQ0MzgzMTE2.X4L5xDvnPKD9SsDzl7Sl05oWbJl64qdaL5V2Wo8umwkg.THeT7aN5H8kbFClGqCufCTssGmCYi82YEDUZVEpY4f4g.JPEG/900_20261021_%ED%94%BC%EC%95%84%EB%85%B8%EB%B0%9C%ED%91%9C%ED%9A%8C_%ED%8F%AC%ED%86%A0%EC%A1%B4%EC%A0%95%EB%A9%B4_01.jpg?type=w1"
@@ -13,7 +13,7 @@ gallery:
   - image: "https://blogfiles.pstatic.net/MjAyNjEwMjFfNjkg/MDAxNzkyNTQ0MzgzMTE2.rN-jp9ls5QWN1vP2EUHRs_rLbUdzw1YgS6w50Dj9v4Ig.4wLqjMfxWXfMRc2-KtMOCK6nuccau7uR6176HxEWrcsg.JPEG/900_20261021_%ED%94%BC%EC%95%84%EB%85%B8%EB%B0%9C%ED%91%9C%ED%9A%8C_%ED%8F%AC%ED%86%A0%EC%A1%B4%EB%AC%B8%EA%B5%AC%EC%83%81%EC%84%B8_02.jpg?type=w1"
     alt: "Piano concert 레터링과 '꿈을 연주하다.' 문구, 오른쪽에 길게 배치한 흑백 피아노 건반 디자인 상세"
     portrait: true
-  - image: "https://blogfiles.pstatic.net/MjAyNjEwMjFfMTg1/MDAxNzkyNTQ0MzgyMTc2.pUfgModfDOVSO1i-mPlMkhaSph04xK9x4JrQmXbKwcQg.p9K0ElCs_iM25WfvSqeWtddhQhFeqDnf4K6w6VdTB70g.JPEG/900_20261021_%ED%94%BC%EC%95%84%EB%85%B8%EB%B0%9C%ED%91%9C%ED%9A%8C_%ED%8F%AC%ED%86%A0%EC%A1%B4%EC%A0%84%EC%B2%B4_03.jpg?type=w1"
+  - image: "https://blogfiles.pstatic.net/MjAyNjEwMjFfMjUx/MDAxNzkyNTQ0MzgyODIy.1Xl5GISqMomzm7C-36XZAc-S3ajBWkfM9q9TPUddXTEg.khzUMFN5Q8B-voAM__h1tZ3tIndqBgE0LCigD0thktIg.JPEG/900_20261021_%ED%94%BC%EC%95%84%EB%85%B8%EB%B0%9C%ED%91%9C%ED%9A%8C_%EA%B3%A8%EB%93%9C%EB%B3%84%ED%92%8D%EC%84%A0%EC%9E%A5%EC%8B%9D_04.jpg?type=w1"
     alt: "골드 별 은박풍선과 샴페인 골드·화이트 헬륨풍선, 블랙·화이트·골드 바닥 풍선장식 상세"
     portrait: true
   - image: "https://blogfiles.pstatic.net/MjAyNjEwMjFfNjUg/MDAxNzkyNTQ0MzgyNDE5.ZZFdpn4p0M1qiIeJ0nfm33dYJCyTWYck0YMGgnoW0kUg._QDGkXolTYpvdDVcYVWbEG_ofc-Rc6aDgoLKTsMpU_gg.PNG/900_20261021_%ED%94%BC%EC%95%84%EB%85%B8%EB%B0%9C%ED%91%9C%ED%9A%8C_%EB%AC%B4%EB%8C%80%ED%97%AC%EB%A5%A8%ED%92%8D%EC%84%A0%EC%9E%A5%EC%8B%9D_07.png?type=w1"
