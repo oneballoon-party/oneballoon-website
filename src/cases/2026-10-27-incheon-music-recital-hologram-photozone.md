@@ -10,13 +10,13 @@ cover_alt: "홀로그램 스팽클 포토월과 블랙·실버 풍선, 대형 �
 gallery:
   - image: "/assets/uploads/incheon-music-recital-20261024-02.jpg"
     alt: "야외 공간에 설치한 홀로그램 포토월과 양쪽 풍선장식, 높은음자리표 오브제가 조화를 이루는 정면 모습"
-    portrait: false
+    portrait: true
   - image: "/assets/uploads/incheon-music-recital-20261024-03.jpg"
     alt: "블랙 풍선과 크롬 실버 풍선, 입체적인 실버 별풍선을 조합한 포토월 왼쪽 상단 장식"
-    portrait: false
+    portrait: true
   - image: "/assets/uploads/incheon-music-recital-20261024-04.jpg"
     alt: "측면에서 촬영한 음악학원 연주회 포토존. 홀로그램 배경과 블랙·실버 풍선장식의 입체감"
-    portrait: false
+    portrait: true
   - image: "/assets/uploads/incheon-music-recital-20261024-05.jpg"
     alt: "포토월 앞쪽에 세워 입체감을 살린 블랙 높은음자리표 오브제와 실버 풍선장식"
     portrait: true
