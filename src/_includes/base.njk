@@ -11,7 +11,16 @@
   <meta property="og:description" content="{{ seo_description or summary or site.description }}">
   <meta property="og:type" content="{% if page.url.startsWith('/cases/') and page.url != '/cases/' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  {% if cover_image %}<meta property="og:image" content="{% if "://" in cover_image %}{{ cover_image }}{% else %}{{ site.url }}{{ cover_image }}{% endif %}">{% endif %}
+  {% set search_image = cover_image %}
+  {# The homepage has no cover_image front matter; use the most recent published case. #}
+  {% if not search_image and page.url == "/" and collections.cases.length %}
+    {% set search_image = collections.cases[0].data.cover_image %}
+  {% endif %}
+  {% if search_image %}
+  <meta property="og:image" content="{% if "://" in search_image %}{{ search_image }}{% else %}{{ site.url }}{{ search_image }}{% endif %}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{% if "://" in search_image %}{{ search_image }}{% else %}{{ site.url }}{{ search_image }}{% endif %}">
+  {% endif %}
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
