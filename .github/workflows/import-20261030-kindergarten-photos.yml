@@ -71,7 +71,10 @@ jobs:
           if len(links)<10:
             raise RuntimeError("No complete image list in public Naver post; keep case unpublished.")
           if len(links)>10:
-            print("Blog contains",len(links),"images. Using first 10 article images; order must match approved blog.")
+            print("Blog contains",len(links),"images. Excluding the first introductory brand logo and keeping the last ten photo images.")
+            if len(links)!=11:
+              raise RuntimeError("Unexpected article image count; manual review required.")
+            links=links[1:]
           out=Path("src/assets/uploads")
           out.mkdir(parents=True,exist_ok=True)
           for i,(filename,url) in enumerate(zip(names,links),start=1):
