@@ -1,0 +1,33 @@
+name: Import Gimpo exhibition photos (one-time)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-20261102-gimpo-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-photos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download published photos into the website
+        run: node scripts/cache-gimpo-after-school-exhibition-images.mjs
+      - name: Commit six downloaded photo files and local image references
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/assets/uploads/20261023-gimpo-after-school-exhibition-* src/cases/2026-11-02-gimpo-after-school-exhibition-balloon-arch.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Store six Gimpo exhibition photos in the website"
+            git push
+          else
+            echo "Gimpo photos already imported"
+          fi
