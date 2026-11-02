@@ -1,6 +1,6 @@
 // Cache photos from this published Naver Blog case during the website build.
 // Browser hotlinking of blogfiles.pstatic.net may fail: save JPEGs to /assets/uploads.
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 const casePath = "src/cases/2026-11-02-gimpo-after-school-exhibition-balloon-arch.md";
@@ -10,6 +10,12 @@ let markdown = readFileSync(casePath, "utf8");
 const urls = [...new Set(
   [...markdown.matchAll(/https:\/\/blogfiles\.pstatic\.net\/[^"\s]+/g)].map(match => match[0])
 )];
+if (urls.length === 0) {
+  const cached = existsSync(uploadDir) ? readdirSync(uploadDir).filter(name => name.startsWith(prefix + "-") && /\.(jpe?g|png|webp)$/i.test(name)) : [];
+  if (cached.length !== 6) throw new Error("Gimpo exhibition: local image count expected 6, found " + cached.length);
+  console.log("Gimpo exhibition photos already stored in repository:", cached.join(", "));
+  process.exit(0);
+}
 if (urls.length !== 6) throw new Error("Gimpo exhibition: expected 6 Naver images, found " + urls.length);
 
 function imageExtension(buf) {
