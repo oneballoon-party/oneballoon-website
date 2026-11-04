@@ -39,6 +39,7 @@ tags: []
               <img
                 src="{{ post.data.cover_image }}"
                 alt="{{ post.data.cover_alt or post.data.title }}"
+                {% if post.data.photo_tone_bright %}style="filter: brightness(1.10) contrast(1.025);"{% endif %}
               >
             {% endif %}
 

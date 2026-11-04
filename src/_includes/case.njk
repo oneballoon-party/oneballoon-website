@@ -57,6 +57,7 @@
           class="case-cover"
           src="{{ cover_image }}"
           alt="{{ cover_alt or title }}"
+          {% if photo_tone_bright %}style="filter: brightness(1.10) contrast(1.025);"{% endif %}
         >
 
         {% if cover_alt %}
@@ -92,6 +93,7 @@
             <img
               src="{{ item.image }}"
               alt="{{ item.alt or title }}"
+              {% if photo_tone_bright %}style="filter: brightness(1.10) contrast(1.025);"{% endif %}
               loading="lazy"
             >
 
