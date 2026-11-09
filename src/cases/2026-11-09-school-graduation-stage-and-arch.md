@@ -1,0 +1,64 @@
+---
+title: "학교 졸업식 풍선장식｜강당 무대장식과 풍선아치 포토존"
+date: 2026-11-09
+published_at: "2026-11-09T14:30:00+09:00"
+category: "강당장식"
+categories:
+  - "학교 · 유치원 행사"
+  - "강당장식"
+  - "졸업식 · 입학식 포토존"
+summary: "학교 졸업식 강당 무대장식 디자인 시안과 실제 풍선아치 설치 사례. 네이비·골드·더스크그린부터 퍼플·파스텔까지 색상별 졸업식 포토존 구성을 소개합니다."
+cover_image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMTY0/MDAxNzk0MTk4ODcxNDY5.jbhaH-Q2wpQ0399mZCx60kyxQsAoIxNte7GNnia08ccg.dj2sbFnq9wj-AP0Z9glSvVZ0zUw5_Ya1hpQGxAWMl3gg.PNG/900_file_00000000c6a4821193b39292d716ee5b%283%29.png?type=w1"
+cover_alt: "네이비·골드·더스크그린 풍선과 학사모 기둥, 2026 GRAD 글자풍선을 배치한 학교 졸업식 강당 무대 정면 디자인 시안"
+gallery_heading: "디자인 시안과 실제 설치 사진"
+gallery:
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMTk3/MDAxNzk0MTk4ODczMDU3.iH8YZV-gitdgKj9k3Nx4x2PIdxTkDcBDtyk5-61-PPwg.16qhUPB8iEL06p5ubkHESBvvegCouoeLGVJVBqEOkxUg.PNG/900_file_000000000ae482099b760d3f9c51ffc1.png?type=w1"
+    alt: "낮은 단상 앞 풍선 가랜드와 양옆 학사모 기둥을 함께 구성한 학교 강당 졸업식 무대 전체 디자인 시안"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMjAw/MDAxNzk0MTk4ODcxOTE2.LvcPT98d3F_X_h6eUMNCJ79OZb0ofUwXnNoHb9poEDMg.sHeA1ybVMbVr8JqD6wo5GgJdohRN6Xokq_BW2TvCvJwg.PNG/900_file_00000000afac820986382e60ff01a04a.png?type=w1"
+    alt: "블랙·퍼플·실버 색상으로 바꾼 학교 졸업식 강당 무대 풍선장식 디자인 시안"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfNTUg/MDAxNzk0MTk4ODczMjMy.1tU_ER7U7dAqmQcoC8DJIcxwBHxDPVqYg7wa0MRfvPYg.vvGM8fux1mM1TBKtw75WVm6qlHGYiYDbFdDG5qBk8nEg.PNG/900_file_00000000c6ec821182ae23149ccf9a63.png?type=w1"
+    alt: "핑크·민트·라벤더 등 파스텔 색상으로 변경한 학교 졸업식 무대 풍선장식 디자인 시안"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMzgg/MDAxNzk0MTk4ODcyMDY5.-cdhCzwNCG4YbkeZajMc6Ecc0SGlhyIDg-T5eosE-3Yg.kWcLZV8aXmxg1MPvj8HI9jXgkhf9JTg4ZSs4onuhX1gg.PNG/900_file_0000000097d88209ae4cf84fd6bd8045%281%29.png?type=w1"
+    alt: "왼쪽 측면에서 바라본 네이비·골드 학교 강당 졸업식 무대장식 디자인 시안"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMTAy/MDAxNzk0MTk4ODcwNjk3.juZHQSkOtkGmejlQ5WI7xUzfZ8z2hUfjD57tXx58gM4g.vwbArTpPTh31sZbOyBXdb_prgORvxyTOmX8tmmwmtmsg.PNG/900_file_0000000097d4820997aa47b8680c7150.png?type=w1"
+    alt: "오른쪽 측면에서 바라본 학사모 기둥과 무대 앞 풍선 가랜드 배치 디자인 시안"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMjMz/MDAxNzk0MTk4ODcxMTM4.6qkUaFhLQuabYpgUxHkE5mn6m7NlO8AHin3ItGSlMIsg.TV6sDRdXW-ZQXzZ4xeaOIkbyVMY9mGwxGo5xEHLGxVEg.PNG/file_000000000ae482099b760d3f9c51ffc1%281%29.png?type=w1"
+    alt: "검정 학사모 은박풍선과 골드 별풍선으로 꾸민 졸업식 풍선기둥 상세 시안"
+    portrait: true
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMjUy/MDAxNzk0MTk4ODcwMTgx.nIutJw1sAt1QNtQaMC2Xbt6Mc_kCorDVchY92ms39ZAg.L2NNHNyUXtUyb6rsms8iytrQHahfV67zd7Kw7RbZBCsg.PNG/file_00000000c6a4821193b39292d716ee5b%281%29%281%29.png?type=w1"
+    alt: "졸업식 학사모 대형 풍선기둥과 작은 학사모 기둥을 나란히 배치한 상세 시안"
+    portrait: true
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMzAg/MDAxNzk0MTk4ODcwNjky.qhxT97KhqT_OQVSOTxAp_0xE0srEa2WLnhN1XdKgReog.ArX_SJBPbFc5OqsUINvMC_C9iKupuDXjSSyBHOTRtGMg.PNG/file_00000000c6a4821193b39292d716ee5b%282%29.png?type=w1"
+    alt: "2026 GRAD 골드 글자풍선과 입체 골드 별풍선으로 장식한 졸업식 무대 앞 상세 시안"
+    portrait: true
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfNjkg/MDAxNzk0MTk4ODcyNDI5.nQPWFdc3NMJpnWNB_8C5TLWduw-V8qtC3m_E85olDEUg.dIoD7chZkOp9SS7D8eIUVAZ818K3rJEeGh85sy2dd_Ag.PNG/900_file_00000000a8a482099a79d87beae90e21.png?type=w1"
+    alt: "학교 체육관 무대 앞에 졸업식 풍선아치를 합성하여 배치한 포토존 디자인 시안"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMTYy/MDAxNzk0MTk4ODcxMzIx.069Nsu6jXWeZOcYWe2f6HVMxI3nscOlGMNeaqvHCpW0g.WlFl95MHoGzYgFRzpoKaFFLaejX-47lxRMtKDMO41xYg.JPEG/900_20261007_141350%281%29.jpg?type=w1"
+    alt: "네이비·골드·더스크그린과 학사모 풍선, 졸업 곰돌이로 완성한 학교 졸업식 풍선아치 실제 설치 사진"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMDlfMjI5/MDAxNzk0MTk4ODcwMjE1.kVGqeZCOLMOjTbymKETDC3pwSsRguTL__jOPLPB0xGAg.M_h5GfQg4KefpyzLTj7w7eExyfK423O-DcbIkgqnj-Eg.JPEG/900_1791467952137%281%29.jpg?type=w1"
+    alt: "학교 졸업식 풍선아치 앞에서 졸업복을 입고 기념사진을 남기는 졸업생의 실제 현장 사진"
+seo_description: "학교 졸업식 풍선장식과 강당 무대장식, 풍선아치 포토존. 학사모 풍선기둥, 2026 GRAD 골드 글자풍선, 네이비·골드·파스텔 디자인 시안 및 실제 설치 사례. 서울·경기·부천·인천 상담."
+---
+학교 졸업식을 준비하시는 선생님들은 **강당 무대가 허전하지 않을지, 기념사진 공간이 필요한지, 정해진 예산 안에서 가능한지** 고민하십니다. 졸업생들에게 오래 기억될 하루인 만큼, 공간에 잘 어울리는 구성이 중요합니다.
+
+## 낮은 단상에도 어울리는 학교 강당 무대장식
+
+첫 번째부터 열 번째 사진은 학교 졸업식 풍선장식 **디자인 시안**입니다. 네이비·골드·더스크그린 풍선으로 무대 앞을 낮게 연결하고, 양옆에 학사모 풍선기둥을 배치했습니다. 단상이 높지 않은 강당에서도 시야를 가리지 않으면서 졸업식 분위기를 살릴 수 있는 구성입니다.
+
+## 학교 분위기에 맞추는 색상
+
+같은 무대 배치도 **네이비·골드**는 단정하고 고급스럽게, **블랙·퍼플·실버**는 세련되게, **파스텔**은 밝고 따뜻하게 표현할 수 있습니다. 학교에서 선호하는 색상과 졸업식 분위기에 맞춰 색감과 장식 구성을 조정합니다.
+
+## 크기와 예산에 맞춘 구성
+
+강당 크기, 단상 높이, 계단과 행사 동선을 확인해 무대 앞 가랜드와 학사모 기둥의 규모를 조절합니다. 무대 전체 장식이 부담스러우면 **양옆 기둥이나 무대 앞 장식만 선택**해 구성하는 방법도 있습니다. 골드 2026 GRAD 글자풍선과 별풍선으로 졸업식 포인트를 더할 수 있습니다.
+
+## 졸업식 풍선아치 포토존과 실제 현장
+
+열 번째 사진은 학교 체육관에 풍선아치를 배치해 본 **합성 디자인 시안**입니다. 마지막 두 장은 **실제 설치 사진과 졸업생 기념촬영 사진**입니다. 네이비·더스크그린·골드 풍선아치와 학사모·졸업 곰돌이 장식으로 친구, 가족과 사진을 남길 수 있는 공간을 완성했습니다.
+
+## 학교 졸업식 풍선장식 상담
+
+**행사 날짜·지역·예산·원하는 색상**과 강당 또는 체육관 사진을 보내주시면 공간에 맞는 무대장식과 풍선아치 구성을 안내해 드립니다. 시안 제작 및 색상 변경도 가능합니다.
+
+서울·경기·부천·인천 출장 설치 · 전화 **010-6491-9061** · 카카오톡 채널 **원벌룬앤토퍼** · 네이버 톡톡
