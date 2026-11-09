@@ -1,0 +1,33 @@
+name: Import school graduation stage and arch photos (one-time)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-20261109-graduation-stage-photos.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-photos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download the twelve published school graduation photos
+        run: node scripts/cache-20261109-school-graduation-stage-images.mjs
+      - name: Save photos and replace hotlinks with local paths
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/assets/uploads/20261109-school-graduation-stage-and-arch-* src/cases/2026-11-09-school-graduation-stage-and-arch.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Host twelve school graduation stage and arch photos locally"
+            git push
+          else
+            echo "School graduation photos already imported"
+          fi
