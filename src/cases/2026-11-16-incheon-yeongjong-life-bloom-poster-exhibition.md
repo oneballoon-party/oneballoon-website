@@ -6,22 +6,22 @@ category: "기업 · 관공서 행사"
 region: "인천"
 jemappelle_staff_credit: true
 summary: "인천 영종구 생명피움 캠페인 '토닥토닥 마음 스케치북' 포스터 공모전 수상작 전시 현장. 가로 6m 대형 전시월에 작품과 안내 디자인을 배치한 전시 공간입니다."
-cover_image: "https://wsrv.nl/?url=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyNjExMTZfNDAg%2FMDAxNzk0ODE1NDYyMDUx.XOwjNYQjQBjbV5NkhjjFOEHQe9nurQR3fSKzFaUTbqMg.Ys6WaZrfGNTD92TrEowLO7afTIIt3MeE6z93T-wLbEgg.JPEG%2F900_261116_%25EC%259D%25B8%25EC%25B2%259C_%25EC%2583%259D%25EB%25AA%2585%25ED%2594%25BC%25EC%259B%2580%25ED%258F%25AC%25EC%258A%25A4%25ED%2584%25B0_6m%25EC%25A0%2584%25EC%258B%259C%25EC%259B%2594_%25EC%25A0%2584%25EC%25B2%25B4%25EC%25A0%2595%25EB%25A9%25B4_01_163514.jpg%3Ftype%3Dw1&w=1400&output=webp"
+cover_image: "/assets/uploads/20261116-incheon-life-bloom-exhibition-01.jpg"
 cover_alt: "인천 영종구 생명피움포스터 공모전 수상작 전시를 위해 구성된 가로 6m 대형 전시월 전체 모습"
 gallery:
-  - image: "https://wsrv.nl/?url=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyNjExMTZfMjUx%2FMDAxNzk0ODE1NDYzMTk0.s4Y9UlbLZe5fK4a6NhIfW5XvyXrpwLQ5tFMjBSjO1REg.t2ilbkOBoOD1dfala9eF6Ph0z-dZfPEGmGvNfJOhGwUg.JPEG%2F900_261116_%25EC%259D%25B8%25EC%25B2%259C_%25EC%2583%259D%25EB%25AA%2585%25ED%2594%25BC%25EC%259B%2580%25ED%258F%25AC%25EC%258A%25A4%25ED%2584%25B0_%25EB%258C%2580%25ED%2598%2595%25EC%25A0%2584%25EC%258B%259C%25EC%259B%2594_%25EC%25A2%258C%25EC%25B8%25A1%25EC%25A0%2584%25EA%25B2%25BD_02.jpg%3Ftype%3Dw1&w=1400&output=webp"
+  - image: "/assets/uploads/20261116-incheon-life-bloom-exhibition-02.jpg"
     alt: "작품 전시 공간과 행사 안내 디자인을 한눈에 볼 수 있는 대형 전시월 왼쪽 측면 전경"
     portrait: false
-  - image: "https://wsrv.nl/?url=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyNjExMTZfODUg%2FMDAxNzk0ODE1NDYyMDY3.p9snsqHPBFvc0LhkDaaGOgce-1faK68SgB43wM9QBlYg.t7DmJhRnR20gfW6OEL5JZQrxT8fz_QquxnGPBEsIKosg.JPEG%2F900_261116_%25EC%259D%25B8%25EC%25B2%259C_%25EC%2583%259D%25EB%25AA%2585%25ED%2594%25BC%25EC%259B%2580%25ED%258F%25AC%25EC%258A%25A4%25ED%2584%25B0_%25EB%258C%2580%25ED%2598%2595%25EC%25A0%2584%25EC%258B%259C%25EC%259B%2594_%25EC%259A%25B0%25EC%25B8%25A1%25EC%25A0%2584%25EA%25B2%25BD_03.jpg%3Ftype%3Dw1&w=1400&output=webp"
+  - image: "/assets/uploads/20261116-incheon-life-bloom-exhibition-03.jpg"
     alt: "가로 6m 전시월에 액자형 수상작과 캐릭터 장식을 조화롭게 배치한 오른쪽 측면 전경"
     portrait: false
-  - image: "https://wsrv.nl/?url=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyNjExMTZfODEg%2FMDAxNzk0ODE1NDYyODg5.Kj6wgHfAwMCwGTyMKIeJ1u8UxIUgOjv9rqMKsGhDpokg.oEtfXxxLBLLUMC_OUEBXolm676Xlr7_c9fQvUHrFO18g.JPEG%2F900_261116_%25EC%259D%25B8%25EC%25B2%259C_%25EC%2583%259D%25EB%25AA%2585%25ED%2594%25BC%25EC%259B%2580%25ED%258F%25AC%25EC%258A%25A4%25ED%2584%25B0_%25EC%25A0%2584%25EC%258B%259C%25EC%259E%2591%25ED%2592%2588%25EB%25B0%25B0%25EC%25B9%2598_04.jpg%3Ftype%3Dw1&w=1400&output=webp"
+  - image: "/assets/uploads/20261116-incheon-life-bloom-exhibition-04.jpg"
     alt: "생명존중 메시지를 담은 포스터 수상작 10점을 2단으로 배치한 전시월 정면 모습"
     portrait: false
-  - image: "https://wsrv.nl/?url=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyNjExMTZfMjU3%2FMDAxNzk0ODE1NDYyMTAy.rsQ5o4hWsFV8Fj5lgGTMkAv5UgHCtIcHSGmLmSvogaMg.2m8LmOae-akWj_Dj3HB2epClgJNtdlEMItrd6spXlEQg.JPEG%2F900_261116_%25EC%259D%25B8%25EC%25B2%259C_%25EC%2583%259D%25EB%25AA%2585%25ED%2594%25BC%25EC%259B%2580%25ED%258F%25AC%25EC%258A%25A4%25ED%2584%25B0_%25EC%2588%2598%25EC%2583%2581%25EC%259E%2591%25EC%2595%25A1%25EC%259E%2590_05.jpg%3Ftype%3Dw1&w=1400&output=webp"
+  - image: "/assets/uploads/20261116-incheon-life-bloom-exhibition-05.jpg"
     alt: "생명피움포스터 공모전 수상작과 작품별 수상 내역을 볼 수 있는 전시 작품 상세"
     portrait: true
-  - image: "https://wsrv.nl/?url=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyNjExMTZfMjgw%2FMDAxNzk0ODE1NDYzMzY1.PsIAWC1S8gQVNEtqXGjp1QoQAZ6vlTpG7NCyzq2Pezgg.OBO9zgCJg9tFoqq7kx7eBnxUV8I4D4-ZwtQnpWlD_ZMg.JPEG%2F900_261116_%25EC%259D%25B8%25EC%25B2%259C_%25EC%2583%259D%25EB%25AA%2585%25ED%2594%25BC%25EC%259B%2580%25ED%258F%25AC%25EC%258A%25A4%25ED%2584%25B0_%25EC%25A0%2584%25EC%258B%259C%25EC%259E%2591%25ED%2592%2588%25EC%2583%2581%25EC%2584%25B8_06.jpg%3Ftype%3Dw1&w=1400&output=webp"
+  - image: "/assets/uploads/20261116-incheon-life-bloom-exhibition-06.jpg"
     alt: "아이들의 따뜻한 메시지가 담긴 생명존중 포스터와 액자형 전시 디스플레이 상세 모습"
     portrait: true
 seo_description: "인천 영종구 생명피움포스터 공모전 수상작 전시 현장. 가로 6m 대형 전시월, 액자형 포스터 배치와 생명존중 캠페인 전시 디자인을 소개합니다. 쥬마뻴 행사 현장 스태프 참여 사례."
