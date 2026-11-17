@@ -1,6 +1,6 @@
-// Cache the six Incheon life-bloom poster exhibition photos during deployment.
-// Browsers may block direct image hotlinks from blogfiles.pstatic.net.
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+// Cache six exhibition photos into local /assets/uploads at build time.
+// If a remote source is inaccessible, retain the CDN URL so the page still builds.
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 const casePath = "src/cases/2026-11-16-incheon-yeongjong-life-bloom-poster-exhibition.md";
@@ -8,71 +8,59 @@ const uploadDir = "src/assets/uploads";
 const prefix = "20261116-incheon-life-bloom-exhibition";
 let markdown = readFileSync(casePath, "utf8");
 const urls = [...new Set(
-  [...markdown.matchAll(/https:\/\/blogfiles\.pstatic\.net\/[^"\s]+/g)].map(match => match[0])
+  [...markdown.matchAll(/https:\/\/wsrv\.nl\/\?url=[^"\s]+/g)].map(m => m[0])
 )];
 
 if (urls.length === 0) {
-  const present = Array.from({length: 6}, (_, i) => {
-    const stem = prefix + "-" + String(i + 1).padStart(2, "0");
-    return ["jpg", "png", "webp"].some(ext => existsSync(join(uploadDir, stem + "." + ext)));
-  });
-  if (!present.every(Boolean)) throw new Error("Life-bloom exhibition: local photo assets are missing.");
-  console.log("Life-bloom exhibition photos are already cached.");
+  console.log("Incheon exhibition: no CDN photos left to cache.");
   process.exit(0);
 }
-if (urls.length !== 6) {
-  throw new Error("Life-bloom exhibition: expected six photo URLs, got " + urls.length);
-}
 
-function imageExt(data) {
-  if (data[0] === 0xff && data[1] === 0xd8 && data[2] === 0xff) return "jpg";
-  if (data[0] === 0x89 && data[1] === 0x50 && data[2] === 0x4e) return "png";
-  if (data.toString("ascii", 0, 4) === "RIFF" &&
-      data.toString("ascii", 8, 12) === "WEBP") return "webp";
+function extension(bytes) {
+  if (bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff) return "jpg";
+  if (bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e) return "png";
+  if (bytes.toString("ascii", 0, 4) === "RIFF" &&
+      bytes.toString("ascii", 8, 12) === "WEBP") return "webp";
   return null;
 }
 
-async function downloadPhoto(url, index) {
-  let lastError;
+async function download(url, i) {
   for (let attempt = 1; attempt <= 3; attempt++) {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 30000);
+    const timer = setTimeout(() => controller.abort(), 25000);
     try {
       const response = await fetch(url, {
         signal: controller.signal,
         headers: {
           "User-Agent": "Mozilla/5.0 (compatible; OneBalloonWebsite/1.0)",
-          "Accept": "image/jpeg,image/png,image/webp,image/*;q=0.8",
-          "Referer": "https://blog.naver.com/oneballoon_topper"
+          "Accept": "image/avif,image/webp,image/png,image/jpeg,image/*;q=0.8"
         }
       });
       if (!response.ok) throw new Error("HTTP " + response.status);
       const bytes = Buffer.from(await response.arrayBuffer());
-      const ext = imageExt(bytes);
-      if (!ext || bytes.length < 10000 || bytes.length > 12000000) {
-        throw new Error("Unexpected image data: " + bytes.length + " bytes");
+      const ext = extension(bytes);
+      if (!ext || bytes.length < 10000 || bytes.length > 15000000) {
+        throw new Error("Invalid image data: " + bytes.length + " bytes");
       }
-      return { bytes, ext };
-    } catch (error) {
-      lastError = error;
+      return { url, bytes, ext, index: i };
+    } catch (err) {
+      console.warn("Incheon exhibition photo " + (i + 1) + ", attempt " + attempt + ": " + err);
     } finally {
       clearTimeout(timer);
     }
   }
-  throw new Error("Life-bloom photo " + (index + 1) + " download failed: " + lastError);
+  return null;
 }
 
 mkdirSync(uploadDir, { recursive: true });
-const cached = await Promise.all(urls.map(async (url, i) => {
-  const { bytes, ext } = await downloadPhoto(url, i);
-  const filename = prefix + "-" + String(i + 1).padStart(2, "0") + "." + ext;
-  writeFileSync(join(uploadDir, filename), bytes);
-  return { remote: url, local: "/assets/uploads/" + filename, bytes: bytes.length };
-}));
-
-for (const image of cached) {
-  markdown = markdown.replaceAll(image.remote, image.local);
+const results = await Promise.all(urls.map(download));
+for (const file of results) {
+  if (!file) continue;
+  const filename = prefix + "-" + String(file.index + 1).padStart(2, "0") + "." + file.ext;
+  writeFileSync(join(uploadDir, filename), file.bytes);
+  markdown = markdown.replaceAll(file.url, "/assets/uploads/" + filename);
 }
 writeFileSync(casePath, markdown, "utf8");
-console.log("Cached six Incheon exhibition images:",
-  cached.map(p => p.local + " (" + p.bytes + " bytes)").join(", "));
+console.log("Incheon exhibition photos cached locally: " +
+  results.filter(Boolean).length + "/" + urls.length +
+  "; missing assets keep their CDN fallback URLs.");
