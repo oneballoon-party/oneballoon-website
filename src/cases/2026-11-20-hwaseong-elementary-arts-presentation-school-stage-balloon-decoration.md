@@ -24,7 +24,7 @@ gallery:
   - image: "https://blogfiles.pstatic.net/MjAyNjExMjBfNzQg/MDAxNzk1MTYwODcxMjQy.RLNWpnspAEUZvLa28qvtc5TeeNWrQYLWjJxfiGmc3Acg.4rkUPa38uJhYHjx4JrN0yICtvOyMSW_DZMb7Dl_FJ1kg.JPEG/900_261120_%ED%95%99%EA%B5%90%ED%96%89%EC%82%AC_%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%92%8D%EC%84%A0_%EB%8D%B0%EC%9D%B4%EC%A7%80%ED%92%8D%EC%84%A0_06.jpg?type=w1"
     alt: "학교 행사 풍선장식의 스마일 은박풍선·데이지 꽃풍선·블랙앤화이트 체크 별 디테일"
     portrait: true
-  - image: "https://blogfiles.pstatic.net/MjAyNjExMjBfMjQ3/MDAxNzk1MTYwODcwMzIz.959rz06GnuIUU9zR3xexa_18MIZYPCwQjc8rMIWuKnkg.0k7YJb75y65FQMvFVPmD6JeNO94_afhKFrE6D736yHYg.JPEG/900_261120_%EA%B0%95%EB%8B%B9%EB%AC%B4%EB%8C%80_%EA%BD%83%ED%92%8D%EC%84%A0_%EC%8A%A4%EB%A7%EC%9D%BC%ED%92%8D%EC%84%A0_05.jpg?type=w1"
+  - image: "https://blogfiles.pstatic.net/MjAyNjExMjBfMjQ3/MDAxNzk1MTYwODcwMzIz.959rz06GnuIUU9zR3xexa_18MIZYPCwQjc8rMIWuKnkg.0k7YJb75y65FQMvFVPmD6JeNO94_afhKFrE6D736yHYg.JPEG/900_261120_%EA%B0%95%EB%8B%B9%EB%AC%B4%EB%8C%80_%EA%BD%83%ED%92%8D%EC%84%A0_%EC%8A%A4%EB%A7%88%EC%9D%BC%ED%92%8D%EC%84%A0_05.jpg?type=w1"
     alt: "무대 앞쪽에서 본 스마일 풍선, 데이지 풍선, 체크 별과 화이트 풍선 가랜드 상세"
     portrait: false
   - image: "https://blogfiles.pstatic.net/MjAyNjExMjBfMTg4/MDAxNzk1MTYwODcwMjQ0.FVQKX4oD-Ry2wnXdjhRODnHK74pn2gpaOuD2MDYPnAAg.MnQ_YBnmRIOLz2wJNQ03C3ko0yUCDqLQvg94tDRina4g.JPEG/900_261120_%ED%95%99%EA%B5%90%EA%B0%95%EB%8B%B9_%EB%AC%B4%EB%8C%80%EC%9A%B0%EC%B8%A1_%ED%92%8D%EC%84%A0%EC%9E%A5%EC%8B%9D_07.jpg?type=w1"
