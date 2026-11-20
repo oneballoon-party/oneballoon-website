@@ -1,0 +1,34 @@
+name: Import Hwaseong school stage photos to website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-20261120-hwaseong-school-stage-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Fetch all eight real school presentation photographs
+        run: node scripts/import-20261120-hwaseong-school-stage-images.mjs
+      - name: Commit photos and local image paths
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/assets/uploads/20261120-hwaseong-school-stage-* src/cases/2026-11-20-hwaseong-elementary-arts-presentation-school-stage-balloon-decoration.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Host eight Hwaseong school arts presentation photos on website"
+            git push
+          else
+            echo "All eight photos have already been hosted."
+          fi
