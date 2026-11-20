@@ -8,7 +8,7 @@ categories:
   - "강당장식"
 region: "경기 화성"
 summary: "화성월문초등학교 2026 RAS 문화예술 교육과정 발표회 강당에 설치한 알록달록한 꽃풍선·스마일 풍선·체크 별 장식. 공연을 가리지 않도록 무대 전면을 중심으로 구성한 실제 학교 행사 풍선장식 사례입니다."
-cover_image: "/assets/uploads/20261120-hwaseong-school-stage-01.jpg"
+cover_image: "/assets/uploads/20261120-hwaseong-school-stage-01-enhanced.jpg"
 cover_alt: "화성월문초등학교 문화예술 발표회를 위해 꾸민 학교 강당 무대 전체 풍선장식 모습"
 gallery_heading: "학교 발표회 강당장식 시공 전후와 풍선 디테일"
 gallery:
