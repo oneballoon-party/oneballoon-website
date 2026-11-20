@@ -1,0 +1,36 @@
+name: Enhance brightness and clarity of existing school-stage cover
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/enhance-20261120-hwaseong-stage-cover.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enhance-cover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out original site assets
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install image processing library
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Correct cover exposure color and focus softness without changing any elements
+        run: python scripts/enhance-20261120-hwaseong-stage-cover.py
+      - name: Publish only the enhanced cover and cover reference
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/assets/uploads/20261120-hwaseong-school-stage-01-enhanced.jpg src/cases/2026-11-20-hwaseong-elementary-arts-presentation-school-stage-balloon-decoration.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Correct Hwaseong school stage cover brightness tones and clarity"
+            git push
+          else
+            echo "Enhanced cover already in repository."
+          fi
