@@ -37,13 +37,14 @@ jobs:
                   r=requests.get(page,headers=headers,timeout=20)
                   print('Post response',r.status_code,len(r.content))
                   s=html.unescape(r.text).replace('\\/','/').replace('\\u0026','&')
-                  for v in re.findall(r'https?://blogfiles\.pstatic\.net/[^\s"\'<>\\]+',s):
+                  for v in re.findall(r'https?://(?:blogfiles|postfiles|blogthumb|mblogthumb-phinf|blogpfthumb-phinf|blog-phinf|post-phinf)\.pstatic\.net/[^\s"\'<>\\]+',s):
                       v=html.unescape(v).split('?')[0].rstrip('),;')
-                      if re.search(r'\.(?:jpg|jpeg|png|webp)$',v,re.I):
+                      if len(v)>70:
                           urls.add(v)
-                  if len(urls)>=6: break
+                  print('Candidate URLs so far:',len(urls))
               except Exception as e: print('Post retrieval:',type(e).__name__)
           print('Image candidates',len(urls))
+          print('Candidate hosts',sorted(set(urllib.parse.urlparse(u).hostname for u in urls)))
           if len(urls)<6: raise SystemExit('Not enough candidate photographs; no publication')
           def fetch(u):
               for query in ['?type=w2','?type=w1','']:
