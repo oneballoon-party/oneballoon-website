@@ -1,0 +1,92 @@
+name: Publish verified gold sequin graduation photos
+on:
+  push:
+    branches: [publish-graduation-gold-sequin-20261125]
+    paths: ['.github/workflows/publish-20261125-gold-sequin.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Retrieve and verify the six requested photographs
+        run: |
+          python -m pip install --quiet pillow requests
+          python - <<'PY'
+          import re, html, io, itertools, pathlib, urllib.parse, requests
+          from PIL import Image, ImageOps, ImageEnhance, ImageFilter
+          from concurrent.futures import ThreadPoolExecutor
+          targets=[
+              ('f121e420e8e42626','3f9d3e1c0036b793',4/3),
+              ('e1c3c4ccc258cc4e','ff397e7e38002622',4/3),
+              ('0ff1c0c0d8ccce4e','ff7f387800462307',3/4),
+              ('1ed9c0c2c9cccf4f','ff7c7c7800672303',3/4),
+              ('81c7881844f2706c','fff0fefce0181e06',3/4),
+              ('fe7878cadafa79f0','ff0f0f3f7f0f0010',3/4)]
+          targets=[(int(d,16),int(a,16),r) for d,a,r in targets]
+          headers={'User-Agent':'Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36','Referer':'https://m.blog.naver.com/oneballoon_topper/224488720602'}
+          pages=['https://m.blog.naver.com/oneballoon_topper/224488720602','https://m.blog.naver.com/PostView.naver?blogId=oneballoon_topper&logNo=224488720602','https://blog.naver.com/PostView.naver?blogId=oneballoon_topper&logNo=224488720602']
+          urls=set()
+          for page in pages:
+              try:
+                  r=requests.get(page,headers=headers,timeout=20)
+                  print('Post response',r.status_code,len(r.content))
+                  s=html.unescape(r.text).replace('\\/','/').replace('\\u0026','&')
+                  for v in re.findall(r'https?://blogfiles\.pstatic\.net/[^\s"\'<>\\]+',s):
+                      v=html.unescape(v).split('?')[0].rstrip('),;')
+                      if re.search(r'\.(?:jpg|jpeg|png|webp)$',v,re.I):
+                          urls.add(v)
+                  if len(urls)>=6: break
+              except Exception as e: print('Post retrieval:',type(e).__name__)
+          print('Image candidates',len(urls))
+          if len(urls)<6: raise SystemExit('Not enough candidate photographs; no publication')
+          def fetch(u):
+              for query in ['?type=w2','?type=w1','']:
+                  try:
+                      r=requests.get(u+query,headers=headers,timeout=20)
+                      r.raise_for_status()
+                      im=ImageOps.exif_transpose(Image.open(io.BytesIO(r.content))).convert('RGB')
+                      if min(im.size)<600: continue
+                      g=list(im.convert('L').resize((9,8),Image.Resampling.LANCZOS).getdata())
+                      d=sum((g[y*9+x]>g[y*9+x+1])<<(y*8+x) for y in range(8) for x in range(8))
+                      g=list(im.convert('L').resize((8,8),Image.Resampling.LANCZOS).getdata())
+                      a=sum((v>sum(g)/64)<<i for i,v in enumerate(g))
+                      return (u,im,d,a)
+                  except Exception: pass
+              return None
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              images=[x for x in pool.map(fetch,sorted(urls)[:100]) if x]
+          chosen=[]
+          for i,(d,a,ratio) in enumerate(targets):
+              scores=sorted((( (d^di).bit_count()+(a^ai).bit_count(),u,im) for u,im,di,ai in images if abs(im.width/im.height-ratio)<0.03),key=lambda x:x[0])
+              if not scores or scores[0][0]>8:
+                  raise SystemExit(f'Photo {i+1} did not match requested upload; no publication')
+              score,u,im=scores[0]
+              if u in [x[0] for x in chosen]: raise SystemExit('Duplicate match; no publication')
+              if len(scores)>1 and scores[1][0]-score<3: raise SystemExit('Ambiguous match; no publication')
+              print('Verified photo',i+1,'distance',score,'size',im.size)
+              chosen.append((u,im))
+          dest=pathlib.Path('/tmp/gold-sequin-verified');dest.mkdir()
+          for i,(_,im) in enumerate(chosen,1):
+              if i==1:
+                  im=ImageEnhance.Brightness(im).enhance(1.035)
+              im.save(dest/f'20261125-graduation-gold-sequin-{i:02d}.webp',quality=91)
+          PY
+      - name: Publish only the verified case and six image files
+        run: |
+          cp src/cases/2026-11-25-school-graduation-gold-sequin-photozone.md /tmp/gold-sequin-verified/
+          git fetch origin main
+          git checkout -B main origin/main
+          test ! -e src/cases/2026-11-25-school-graduation-gold-sequin-photozone.md
+          cp /tmp/gold-sequin-verified/*.webp src/assets/uploads/
+          cp /tmp/gold-sequin-verified/*.md src/cases/
+          git add src/assets/uploads/20261125-graduation-gold-sequin-*.webp src/cases/2026-11-25-school-graduation-gold-sequin-photozone.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish verified school graduation gold sequin photozone"
+          git push origin main
