@@ -47,7 +47,7 @@ jobs:
           print('Candidate hosts',sorted(set(urllib.parse.urlparse(u).hostname for u in urls)))
           if len(urls)<6: raise SystemExit('Not enough candidate photographs; no publication')
           def fetch(u):
-              for query in ['?type=w2','?type=w1','']:
+              for query in ['', '?type=w2','?type=w1']:
                   try:
                       r=requests.get(u+query,headers=headers,timeout=20)
                       r.raise_for_status()
@@ -62,15 +62,33 @@ jobs:
               return None
           with ThreadPoolExecutor(max_workers=8) as pool:
               images=[x for x in pool.map(fetch,sorted(urls)[:100]) if x]
+          rgb=[[148,160,171,124,135,147,129,129,130,130,130,131,117,129,127,136,138,138,131,134,131,105,109,111,103,108,82,187,162,126,165,163,157,81,101,87,154,140,118,201,183,149,189,176,164,125,119,105],
+               [142,154,161,129,145,159,129,132,134,141,141,144,94,104,88,148,137,119,150,144,134,106,123,114,117,120,96,184,161,117,207,191,180,133,138,129,150,134,114,183,166,135,217,202,180,144,131,119],
+               [157,167,181,127,133,140,122,123,125,105,102,102,124,135,137,133,135,139,138,135,133,129,137,134,118,115,92,177,151,107,199,180,165,127,128,123,195,176,152,205,188,160,216,196,167,192,169,139],
+               [161,172,186,123,128,134,124,125,128,103,101,100,132,143,147,130,133,139,137,135,133,130,137,135,124,119,95,177,152,108,195,178,166,126,128,124,184,166,143,202,184,153,213,193,166,182,161,136],
+               [141,147,157,141,159,176,126,140,159,119,122,129,85,103,93,132,127,110,146,136,129,150,131,107,91,100,72,153,142,122,183,155,105,196,169,129,174,148,120,142,130,116,202,181,145,209,188,153],
+               [130,127,116,137,139,141,93,105,101,84,106,101,182,172,170,187,175,185,146,146,131,88,113,71,196,183,183,207,195,203,136,139,151,108,92,69,209,190,164,214,198,177,129,115,101,95,83,70]]
           chosen=[]
           for i,(d,a,ratio) in enumerate(targets):
-              scores=sorted((( (d^di).bit_count()+(a^ai).bit_count(),u,im) for u,im,di,ai in images if abs(im.width/im.height-ratio)<0.03),key=lambda x:x[0])
-              if not scores or scores[0][0]>8:
-                  raise SystemExit(f'Photo {i+1} did not match requested upload; no publication')
-              score,u,im=scores[0]
+              scores=[]
+              for u,im,di,ai in images:
+                  if abs(im.width/im.height-ratio)>=0.03: continue
+                  hd=(d^di).bit_count()+(a^ai).bit_count()
+                  thumb=[v for p in im.resize((4,4),Image.Resampling.LANCZOS).getdata() for v in p]
+                  err=sum(abs(x-y) for x,y in zip(thumb,rgb[i]))/48
+                  if hd<=8 and err<=6: scores.append((hd+2*err,hd,err,u,im))
+              scores.sort(key=lambda x:(x[0],-x[4].width*x[4].height))
+              print('Photo',i+1,'candidate scores',[(round(s[0],2),s[1],round(s[2],2),s[4].size) for s in scores[:4]])
+              if not scores: raise SystemExit(f'Photo {i+1} did not match; no publication')
+              score,hd,err,u,im=scores[0]
               if u in [x[0] for x in chosen]: raise SystemExit('Duplicate match; no publication')
-              if len(scores)>1 and scores[1][0]-score<3: raise SystemExit('Ambiguous match; no publication')
-              print('Verified photo',i+1,'distance',score,'size',im.size)
+              if len(scores)>1 and scores[1][0]-score<2:
+                  other=scores[1][4]
+                  p=list(im.resize((32,32),Image.Resampling.LANCZOS).getdata())
+                  q=list(other.resize((32,32),Image.Resampling.LANCZOS).getdata())
+                  diff=sum(abs(a-b) for x,y in zip(p,q) for a,b in zip(x,y))/(32*32*3)
+                  if diff>3: raise SystemExit('Ambiguous distinct match; no publication')
+              print('Verified photo',i+1,'distance',hd,'RGB error',round(err,2),'size',im.size)
               chosen.append((u,im))
           dest=pathlib.Path('/tmp/gold-sequin-verified');dest.mkdir()
           for i,(_,im) in enumerate(chosen,1):
